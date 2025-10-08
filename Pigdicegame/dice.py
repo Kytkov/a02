@@ -1,15 +1,12 @@
 import random
-from typing import Optional
 
 class Dice:
-    """En vanlig sexsidig tärning."""
+    """Six sided dice."""
+    def __init__(self, sides=6):
+        if sides < 2:
+            raise ValueError("A dice must have at least 2 sides.")
+        self.sides = sides
 
-    def __init__(self, rng: Optional[random.Random] = None) -> None:
-        self._rng = rng or random.Random()
-
-    def roll(self) -> int:
-        return self._rng.randint(1, 6)
-
-if __name__ == "__main__":
-    d = Dice()
-    print(d.roll())
+    def roll(self):
+        """Return a random number between 1 and 6"""
+        return random.randint(1, self.sides)
