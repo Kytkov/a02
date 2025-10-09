@@ -14,7 +14,7 @@ class TestDice(unittest.TestCase):
     def test_invalid_sides(self):
         with self.assertRaises(ValueError):
             Dice(1)
-
+    
     def test_roll_within_range(self):
         dice = Dice(6)
         for _ in range(100):

@@ -2,24 +2,31 @@ class Intelligence:
 
     def __init__(self):
         self.name = 'CPU'
+        self.score = 0
 
     def set_score(self, score):
+        if not isinstance(score, int):
+            raise ValueError('Score must be an integer')
         self.score = score
-
+    
     def add_score(self, score):
-        self.score =+ score
+        if not isinstance(score, int):
+            raise ValueError('Score must be an integer')
+        self.score += score
 
     def get_score(self):
         return self.score
-    
+
     def set_name(self, name):
+        if not isinstance(name, str):
+            raise ValueError('Name must be a string')
         self.name = name
 
     def get_name(self):
         return self.name
-    
+
     def easy(self):
-        pass
+       pass
 
     def medium(self):
         pass
@@ -28,14 +35,15 @@ class Intelligence:
         pass
 
     def set_difficulty(self, level):
-        
-        if level.lower() == "easy":
-            self.easy()
-        elif level.lower() == "medium":
-            self.medium
-        elif level.lower() == "hard":
-            self.hard
+        if not isinstance(level, str):
+            return 'Incorrect input, Try again.'
+
+        level = level.lower()
+        if level == "easy":
+            return self.easy()
+        elif level == "medium":
+            return self.medium()
+        elif level == "hard":
+            return self.hard()
         else:
-            print('Incorrect input, Try again.') 
-
-
+            return 'Incorrect input, Try again.'
