@@ -1,0 +1,5 @@
+coverage==7.*
+flake8==7.*
+flake8-docstrings==1.7.*
+flake8-polyfill==1.0.*
+pylint==3.*
