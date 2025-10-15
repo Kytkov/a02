@@ -10,18 +10,20 @@ class Game:
         self.score_collected_this_round = 0
 
     def player_turn(self):
-        decision_after_roll_input = ""
+        still_playing = True
+        while still_playing:
+            decision_after_roll_input = ""
 
 
-        roll_input = input("Press R to roll dice")
+            roll_input = input("Press R to roll dice")
                     
-        if roll_input.lower().strip() == "r":
-            has_rolled = self.current_dice.roll()
-            print("You rolled " + has_rolled + "!")
+            if roll_input.lower().strip() == "r":
+                has_rolled = self.current_dice.roll()
+                print("You rolled " + has_rolled + "!")
         
             if self.is_round_over(has_rolled):
                 print("woops, you rolled a one and lost your turn!")
-                return
+                break
             
             self.score_collected_this_round += has_rolled
             
@@ -30,7 +32,7 @@ class Game:
                     "CHOOSE:\nR: Roll another\nS: Stand and keep your score\n")
                 if decision_after_roll_input.lower().strip() == "s":
                     self.current_player.add_score(self.score_collected_this_round)
-                    return
+                    break
                 #FIX ? : says "roll another" here then "roll" again on loop's start
     
     def computer_turn(self):
@@ -125,11 +127,13 @@ class Game:
                         print("opponent won!")
                         break
 
-                    self.player_has_current_hand = not self.player_has_current_hand # change turn
-                    
+                   
                     if self.player_has_current_hand: # if the player is the current one playing
                         self.player_turn()
             
                     else:
                         self.computer_turn()
+                    
+                    self.player_has_current_hand = not self.player_has_current_hand # change turn
+                    
                       
