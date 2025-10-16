@@ -19,7 +19,7 @@ class Game:
                     
             if roll_input.lower().strip() == "r":
                 has_rolled = self.current_dice.roll()
-                print("You rolled " + has_rolled + "!")
+                print("You rolled " + str(has_rolled) + "!")
         
             if self.is_round_over(has_rolled):
                 print("woops, you rolled a one and lost your turn!")
@@ -28,12 +28,15 @@ class Game:
             self.score_collected_this_round += has_rolled
             
             while(len(decision_after_roll_input) == 0): # for safety; player may accidentaly send nothing as input
-                decision_after_roll_input = input("You have gained " + self.score_collected_this_round + " in this round.\n" + 
+                decision_after_roll_input = input("You have gained " + str(self.score_collected_this_round) + " in this round.\n" + 
                     "CHOOSE:\nR: Roll another\nS: Stand and keep your score\n")
                 if decision_after_roll_input.lower().strip() == "s":
                     self.current_player.add_score(self.score_collected_this_round)
-                    break
+                    print("\nEnd of round! You earned " + str(self.score_collected_this_round) + " in this round.")
+                    still_playing = False
+                    
                 #FIX ? : says "roll another" here then "roll" again on loop's start
+        
     
     def computer_turn(self):
           #depending on intelligence .. 
@@ -52,7 +55,7 @@ class Game:
         return roll == 1
 
     def has_won(self, score):
-        return score >100
+        return score >=100
 
     def run(self):
         """Manage menu and handle both input and output"""
@@ -69,6 +72,8 @@ class Game:
 
 
         while self.isRunning:
+            gameOver = False
+
             try:
                 MENU_INPUT = int(input(MENU_OUTPUT))
 
@@ -106,12 +111,12 @@ class Game:
                     difficulty_level = "E"
                 
                 # all objects
-                self.current_player = player(PLAYER_NAME)
-                self.current_intelligence= intelligence() # in constructor?
-                self.current_dice = dice(DICE_SIDES)
+                self.current_player = player.player(PLAYER_NAME)
+                self.current_intelligence= intelligence.Intelligence() # in constructor?
+                self.current_dice = dice.Dice(DICE_SIDES)
                 
 
-                self.current_intelligence.set_difficult(difficulty_level)
+                self.current_intelligence.set_difficulty(difficulty_level)
 
                 while not gameOver: # game loop
                     
@@ -136,4 +141,7 @@ class Game:
                     
                     self.player_has_current_hand = not self.player_has_current_hand # change turn
                     
-                      
+#if __name__ == '__main__':
+#     g = Game()
+#     g.run()
+     
