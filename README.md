@@ -1,3 +1,5 @@
+[![API Docs](https://img.shields.io/badge/API%20Docs-GitHub%20Pages-blue)](https://kytkov.github.io/a02/)
+
 # Pig Dice Game
 
 ## Overview
