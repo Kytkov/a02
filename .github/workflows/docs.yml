@@ -6,6 +6,9 @@ permissions:
   contents: write
   pages: write
   id-token: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,7 +18,17 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - run: pdoc -o doc/api Pigdicegame
+      - uses: actions/configure-pages@v5
+      # Generate docs only for production modules (tests can break imports)
+      - run: >
+          pdoc -o doc/api
+          Pigdicegame.Game
+          Pigdicegame.dice
+          Pigdicegame.dicehand
+          Pigdicegame.player
+          Pigdicegame.Intelligence
+          Pigdicegame.Highscore
+          Pigdicegame.Statistics
       - uses: actions/upload-pages-artifact@v3
         with:
           path: doc/api
