@@ -1,4 +1,3 @@
-
 import unittest
 import random
 
@@ -88,8 +87,6 @@ class TestDiceHand(unittest.TestCase):
         dh.schedule_cheat([0, 7])  # schedule invalid values
         with self.assertRaises(ValueError):
             dh.roll()  # applying the cheat should raise
-
-
 
 
 if __name__ == "__main__":

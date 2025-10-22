@@ -1,4 +1,3 @@
-
 """Dice hand module for Pig dice game.
 
 This module defines :class:`DiceHand`, an object that manages one or more
@@ -6,6 +5,7 @@ dice (instances of :class:`Dice`), provides rolling utilities, a small
 cheat hook for testing, and helpers commonly needed in Pig variants,
 e.g. detecting a "pig out" (any 1) and computing the roll sum.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass, field
@@ -79,7 +79,9 @@ class DiceHand:
         if self._cheat_next is not None:
             vals = self._cheat_next
             if len(vals) != self.count or any(not (1 <= v <= self.sides) for v in vals):
-                raise ValueError("cheat values must be within dice range and match hand size")
+                raise ValueError(
+                    "cheat values must be within dice range and match hand size"
+                )
             self._last = list(vals)
             self._cheat_next = None
             return list(self._last)
