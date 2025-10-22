@@ -2,6 +2,7 @@ class Statistics:
     """Tracks player and game statistics for Pig Dice Game."""
 
     def __init__(self):
+        """Test."""
         self.total_rolls = 0
         self.total_ones = 0
         self.total_rounds = 0

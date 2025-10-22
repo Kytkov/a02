@@ -1,9 +1,14 @@
+"""Unit tests for Dice Class."""
+
 import unittest
 from dice import Dice
 
 
 class TestDice(unittest.TestCase):
-    """Unit tests for the Dice class to ensure correct initialization and rolling behavior."""
+    """Unit tests for the Dice class to ensure correct initialization and.
+
+    rolling behavior.
+    """
 
     def test_default_sides(self):
         """Test that a dice is created with 6 sides by default."""
@@ -16,16 +21,23 @@ class TestDice(unittest.TestCase):
         self.assertEqual(dice.sides, 10)
 
     def test_invalid_sides(self):
-        """Test that creating a dice with fewer than 2 sides raises a ValueError."""
+        """Test that creating a dice with fewer than.
+
+        2 sides raises a ValueError.
+        """
         with self.assertRaises(ValueError):
             Dice(1)
 
     def test_roll_within_range(self):
-        """Test that the roll method always returns a value within the valid range."""
+        """Test that the roll method always returns.
+
+        a value within the valid range.
+        """
         dice = Dice(6)
         for _ in range(100):
             result = dice.roll()
             self.assertTrue(1 <= result <= 6)
+
 
 if __name__ == "__main__":
     unittest.main()
