@@ -2,6 +2,8 @@
 import player as player
 import dice as dice
 import Intelligence as intelligence
+import Statistics as stats
+
 
 
 class Game:
@@ -12,11 +14,12 @@ class Game:
         self.player_has_current_hand = True
         self.score_collected_this_round = 0
          # all objects
-        self.current_player = player.player()
+        self.current_player = player.Player()
         self.current_intelligence = (
                     intelligence.Intelligence()
                 )  # in constructor?
         self.current_dice = dice.Dice()
+        self.stats = stats.Statistics()
 
     def player_turn(self):
         """player's turn to play"""
@@ -69,10 +72,13 @@ class Game:
             self.score_collected_this_round += has_rolled
 
             # depending on difficulty, keep on playing depedning on score or stand
-
-            should_stand = True if random.randint(0,1) == 0 else False
+            
+            
+            should_stand = self.current_intelligence.make_choice(self.score_collected_this_round, 
+                                                                 self.current_player.get_score())
             if should_stand:
                 print("Opponent has collected " + str(self.score_collected_this_round))
+                self.current_intelligence.add_score(self.score_collected_this_round)
                 break
         
         print("Opponent rolled a one and lost")
@@ -91,15 +97,11 @@ class Game:
 
     def run(self):
         """Manage menu and handle both input and output"""
-        MENU_OUTPUT = "Welcome to Pig Dice!\t\n1:New game\n2: Help"
+        MENU_OUTPUT = "Welcome to Pig Dice!\t\n1:New game\n2: View stats"
         MENU_INPUT: int
         game_over = False
         DICE_SIDES: int
-
-        current_player: player
         PLAYER_NAME = ""
-
-        dice_sides: int
         difficulty_level: str
 
         while self.is_running:
@@ -123,8 +125,8 @@ class Game:
                 if not has_recovered_from_err:
                     print("[!] Please chooce correct menu option")
 
-            if MENU_INPUT == 1:
-
+        if MENU_INPUT == 1:
+            
                 while len(PLAYER_NAME) == 0:  # only assign name once
                     PLAYER_NAME = input("Enter your name: ")
                     if len(PLAYER_NAME) == 0:
@@ -147,12 +149,14 @@ class Game:
                 ]:  # assign level automatically
                     difficulty_level = "E"
 
-                self.current_intelligence.set_difficulty(difficulty_level)
-
-
+                # use objects
                 self.current_player = player.player(PLAYER_NAME)
-                self.current_intelligence = intelligence.Intelligence()
                 self.current_dice = dice.Dice(DICE_SIDES)
+                self.stats = stats.Statistics()
+                self.current_intelligence = intelligence.Intelligence()
+
+                self.current_intelligence.set_difficulty(difficulty_level)
+               
 
                 while not game_over:  # game loop
 
@@ -179,6 +183,11 @@ class Game:
                     self.player_has_current_hand = (
                         not self.player_has_current_hand
                     )  # change turn
+        elif MENU_INPUT == 2:
+            print("--STATS--")
+            
+            
+
 
 
 # if __name__ == '__main__':

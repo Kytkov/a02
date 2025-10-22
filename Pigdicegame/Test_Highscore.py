@@ -4,6 +4,7 @@ from Highscore import HighScore
 
 class Test_HighScore(unittest.TestCase):
 
+
     def make_object(self):
         obj = HighScore()
         self.possible_scores = [3, 18, 6, 15]
@@ -11,7 +12,7 @@ class Test_HighScore(unittest.TestCase):
             obj.checkScore(self.possible_scores[i])
         return obj
 
-    def test_getHighScore(self):
+    def Test_getHighScore(self):
         """Get current highscore"""
         obj = self.make_object()
         self.assertEqual(obj.getHighScore(), 18)

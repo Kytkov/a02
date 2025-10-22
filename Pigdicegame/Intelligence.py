@@ -4,6 +4,7 @@ class Intelligence:
     def __init__(self):
         self.name = 'CPU'
         self.score = 0
+        self.difficulty = NotImplemented
 
     def set_score(self, score):
         """set computer's score"""
@@ -34,24 +35,24 @@ class Intelligence:
     def easy(self, temp_score):
        """check if computer should roll or stay"""
        if temp_score>=5:
-           self.add_score(temp_score)
+          return True 
        
-       else:
-        return
+       return False
 
     def medium(self, temp_score, player_score):
         """check if computer should roll or stay"""
         if temp_score>=15 and (player_score)-(self.score+temp_score)<30:
-            self.add_score(temp_score)
-            return 'done'
-        
-        elif temp_score>=20 and (player_score)-(self.score+temp_score)>=30:
             
-            self.add_score(temp_score)
-            return 'done' 
+            return True
+        
+        
+        # elif temp_score>=20 and (player_score)-(self.score+temp_score)>=30:
+            
+        #     self.add_score(temp_score)
+        #     return 'done' 
             
         else:
-            return
+            return False
     
 
     def hard(self, temp_score, player_score):
@@ -60,7 +61,6 @@ class Intelligence:
         #    self.add_score(temp_score)
         #   return True
         if temp_score>=20 and (player_score)-(self.score+temp_score)>=30:
-            self.add_score(temp_score)
             return True
         
         else:
@@ -72,11 +72,30 @@ class Intelligence:
             return 'Incorrect input, Try again.'
 
         level = level.lower()
-        if level == "easy":
-            return self.easy()
-        elif level == "medium":
-            return self.medium()
-        elif level == "hard":
-            return self.hard()
+        if level == "e":
+            self.difficulty = "easy"
+        elif level == "m":
+            self.difficulty = "medium"
+        elif level == "h":
+            self.difficulty = "hard"
         else:
             return 'Incorrect input, Try again.'
+        
+
+        # level = level.lower()
+        # if level == "easy":
+        #     return self.easy()
+        # elif level == "medium":
+        #     return self.medium()
+        # elif level == "hard":
+        #     return self.hard()
+        # else:
+        #     return 'Incorrect input, Try again.'
+
+    def make_choice(self, temp_score, player_score):
+        if self.difficulty == "e":
+           self.easy(temp_score)
+        elif self.difficulty == "m":
+            self.medium(temp_score, player_score)
+        else:
+            self.hard(temp_score,player_score)

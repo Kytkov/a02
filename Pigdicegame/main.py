@@ -1,7 +1,6 @@
 """Entry point for the Pig dice game application."""
 
-import Game as Game
-
+import game as Game
 
 def main() -> None:
     """Instantiate the game and start its main loop."""
