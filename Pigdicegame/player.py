@@ -1,7 +1,8 @@
-"""player class intended for the dice game"""
-class Player:
-    """player class intended for the dice game"""
+"""player class intended for the dice game."""
 
+
+class Player:
+    """player class intended for the dice game."""
 
     def __init__(self, name):
         if not isinstance(name, str):

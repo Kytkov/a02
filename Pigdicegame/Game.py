@@ -1,29 +1,28 @@
-"""import objects"""
+"""Import objects."""
+
 import player as player
 import dice as dice
 import Intelligence as intelligence
 import Statistics as stats
 
 
-
 class Game:
-    """Handle game's running status"""
+    """Handle game's running status."""
 
     def __init__(self):
         self.is_running = True
         self.player_has_current_hand = True
         self.score_collected_this_round = 0
-         # all objects
+        # all objects
         self.current_player = player.Player("")
         self.current_intelligence = (
-                    intelligence.Intelligence()
-                )  # in constructor?
+            intelligence.Intelligence()
+        )  # in constructor?
         self.current_dice = dice.Dice(6)
         self.stats = stats.Statistics()
 
-
     def player_turn(self):
-        """player's turn to play"""
+        """Player's turn to play."""
         still_playing = True
         while still_playing:
             decision_after_roll_input = ""
@@ -33,8 +32,6 @@ class Game:
             if roll_input.lower().strip() == "r":
                 has_rolled = self.current_dice.roll()
                 print("You rolled " + str(has_rolled) + "!")
-
-            self.stats.record_roll(has_rolled)
 
             if self.is_round_over(has_rolled):
                 print("woops, you rolled a one and lost your turn!")
@@ -51,80 +48,75 @@ class Game:
                     + " in this round.\n"
                     + "CHOOSE:\nR: Roll another\nS: Stand and keep your score\n"
                 )
-            
                 if decision_after_roll_input.lower().strip() == "s":
-                    self.current_player.add_score(self.score_collected_this_round)
+                    self.current_player.add_score(
+                        self.score_collected_this_round
+                    )
                     print(
                         "\nEnd of round! You earned "
                         + str(self.score_collected_this_round)
-                        + " in this round. \tIn total you have " + str(self.current_player.get_score())
+                        + " in this round."
                     )
-                    self.stats.record_round(self.score_collected_this_round)
                     still_playing = False
 
+                # FIX ? : says "roll another" here then "roll" again on loop's start
 
     def computer_turn(self):
-        """computer's turn to play"""
-        opponent_final_message = "Opponent rolled "
+        """Computer's turn to play."""
         still_playing = True
-
         while still_playing:
             has_rolled = self.current_dice.roll()
 
             if self.is_round_over(has_rolled):
-                print(opponent_final_message + "\nbut at last rolled a one and lost ")
                 break
-
-            opponent_final_message += str(has_rolled) + ", "
 
             self.score_collected_this_round += has_rolled
 
             # depending on difficulty, keep on playing depedning on score or stand
-            
-            
-            should_stand = self.current_intelligence.make_choice(self.score_collected_this_round, 
-                                                                 self.current_player.get_score())
-            print("sent away", self.score_collected_this_round, " and got ",
-                  should_stand)
+
+            should_stand = self.current_intelligence.make_choice(
+                self.score_collected_this_round,
+                self.current_player.get_score(),
+            )
             if should_stand:
-                self.current_intelligence.add_score(self.score_collected_this_round)
-                print("Opponent collected " + str(self.score_collected_this_round)
-                      + "\t ..and has a total score of " + str(self.current_intelligence.get_score()))
-                #return
-                break
-        
-        
+                print(
+                    "Opponent has collected "
+                    + str(self.score_collected_this_round)
+                )
+                self.current_intelligence.add_score(
+                    self.score_collected_this_round
+                )
+                return
+
+        print("Opponent rolled a one and lost")
         # depending on intelligence ..
         # call one of intelligence's methods depending on
         # chosen difficult level
-        
 
     def is_round_over(self, roll):
-        """check if round is over"""
+        """Check if round is over."""
         return roll == 1
 
     def has_won(self, score):
-        """check if game is won"""
-        return score >=100
-    
-    def resetScores(self):
-        self.current_player.set_score(0)
-        self.current_intelligence.set_score(0)
+        """Check if game is won."""
+        return score >= 100
 
     def run(self):
-        """Manage menu and handle both input and output"""
-        MENU_OUTPUT = "Welcome to Pig Dice!\t\n1:New game"
-        MENU_OUTPUT_GAME = "Keep playing?\n1:New round\n2: View stats"
+        """Manage menu and handle both input and output."""
+        MENU_OUTPUT = "Welcome to Pig Dice!\t\n1:New game\n2: View stats"
         MENU_INPUT: int
-        MENU_INPUT_GAME: int
+        game_over = False
         DICE_SIDES: int
         PLAYER_NAME = ""
         difficulty_level: str
 
-        try:
-            MENU_INPUT = int(input(MENU_OUTPUT))
+        while self.is_running:
+            game_over = False
 
-        except ValueError:
+            try:
+                MENU_INPUT = int(input(MENU_OUTPUT))
+
+            except ValueError:
                 has_recovered_from_err = False
                 for i in range(
                     len(MENU_INPUT)
@@ -140,77 +132,66 @@ class Game:
                     print("[!] Please chooce correct menu option")
 
         if MENU_INPUT == 1:
-            
-                while len(PLAYER_NAME) == 0:  # only assign name once
-                    PLAYER_NAME = input("Enter your name: ")
-                    if len(PLAYER_NAME) == 0:
-                        print("[!] Your name needs to consist of atleast one character")
 
-                # choose sides for dice
-                try:
-                    DICE_SIDES = int(input("Enter amount of sides for the dice:"))
-                except ValueError:
-                    print("[!] Did not get valid number.\nSides for dice:\t6")
-                    DICE_SIDES = 6
+            while len(PLAYER_NAME) == 0:  # only assign name once
+                PLAYER_NAME = input("Enter your name: ")
+                if len(PLAYER_NAME) == 0:
+                    print(
+                        "[!] Your name needs to consist of atleast one character"
+                    )
 
-                difficulty_level = input(
-                    "Finally, enter difficult level:\nE = EASY\nM = MEDIUM\nH = HARD"
-                )
-                if difficulty_level not in [
-                    "E",
-                    "M",
-                    "H",
-                ]:  # assign level automatically
-                    difficulty_level = "E"
+            # choose sides for dice
+            try:
+                DICE_SIDES = int(input("Enter amount of sides for the dice:"))
+            except ValueError:
+                print("[!] Did not get valid number.\nSides for dice:\t6")
+                DICE_SIDES = 6
 
-                # use objects
-                self.current_player = player.Player(PLAYER_NAME)
-                self.current_dice = dice.Dice(DICE_SIDES)
-                self.stats = stats.Statistics()
-                self.current_intelligence = intelligence.Intelligence()
+            difficulty_level = input(
+                "Finally, enter difficult level:\nE = EASY\nM = MEDIUM\nH = HARD"
+            )
+            if difficulty_level not in [
+                "E",
+                "M",
+                "H",
+            ]:  # assign level automatically
+                difficulty_level = "E"
 
-                self.current_intelligence.set_difficulty(difficulty_level)
-        while self.is_running:
-                self.resetScores()
-                game_over = False
+            # use objects
+            self.current_player = player.player(PLAYER_NAME)
+            self.current_dice = dice.Dice(DICE_SIDES)
+            self.stats = stats.Statistics()
+            self.current_intelligence = intelligence.Intelligence()
 
-                while not game_over:  # game loop
+            self.current_intelligence.set_difficulty(difficulty_level)
 
-                    # the variabels below are general for both player and opponent.
-                    # After every round, they are assigned those default values
+            while not game_over:  # game loop
 
-                    self.score_collected_this_round = 0
+                # the variabels below are general for both player and opponent.
+                # After every round, they are assigned those default values
 
-                    if self.has_won(self.current_player.get_score()):
-                        print("player won")
-                        break
-                    if self.has_won(self.current_intelligence.get_score()):
-                        print("opponent won!")
-                        break
+                self.score_collected_this_round = 0
 
-                    if (
-                        self.player_has_current_hand
-                    ):  # if the player is the current one playing
-                        self.player_turn()
+                if self.has_won(self.current_player.get_score()):
+                    print("player won")
+                    break
+                if self.has_won(self.current_intelligence.get_score()):
+                    print("opponent won!")
+                    break
 
-                    else:
-                        self.computer_turn()
+                if (
+                    self.player_has_current_hand
+                ):  # if the player is the current one playing
+                    self.player_turn()
 
-                    self.player_has_current_hand = (
-                        not self.player_has_current_hand
-                    )  # change turn
-                
-                MENU_INPUT_GAME = int(input(MENU_OUTPUT_GAME))
+                else:
+                    self.computer_turn()
 
-                if MENU_INPUT_GAME == 1:
-                    game_over=False
-
-                elif MENU_INPUT_GAME == 2:
-    
-                    print(self.stats.__str__())
-            
-            
-
+                self.player_has_current_hand = (
+                    not self.player_has_current_hand
+                )  # change turn
+        elif MENU_INPUT == 2:
+            print("--STATS--")
 
 
 # if __name__ == '__main__':

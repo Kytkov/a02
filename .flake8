@@ -1,0 +1,5 @@
+[flake8]
+max-line-length = 88
+extend-ignore = D401,D100,D104,D107,D102
+per-file-ignores =
+    Pigdicegame/Test*.py: D100,D101,D102,D103,D104,D105,D107,E501

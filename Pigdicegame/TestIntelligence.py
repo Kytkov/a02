@@ -35,8 +35,12 @@ class TestIntelligence(unittest.TestCase):
             self.cpu.set_name(192)
 
     def test_set_difficulty(self):
-        self.assertEqual(self.cpu.set_difficulty("5"), "Incorrect input, Try again.")
-        self.assertEqual(self.cpu.set_difficulty(5), "Incorrect input, Try again.")
+        self.assertEqual(
+            self.cpu.set_difficulty("5"), "Incorrect input, Try again."
+        )
+        self.assertEqual(
+            self.cpu.set_difficulty(5), "Incorrect input, Try again."
+        )
 
 
 if __name__ == "__main__":
