@@ -14,11 +14,11 @@ class Game:
         self.player_has_current_hand = True
         self.score_collected_this_round = 0
          # all objects
-        self.current_player = player.Player()
+        self.current_player = player.Player("")
         self.current_intelligence = (
                     intelligence.Intelligence()
                 )  # in constructor?
-        self.current_dice = dice.Dice()
+        self.current_dice = dice.Dice(0)
         self.stats = stats.Statistics()
 
     def player_turn(self):
@@ -79,7 +79,7 @@ class Game:
             if should_stand:
                 print("Opponent has collected " + str(self.score_collected_this_round))
                 self.current_intelligence.add_score(self.score_collected_this_round)
-                break
+                return
         
         print("Opponent rolled a one and lost")
         # depending on intelligence ..
