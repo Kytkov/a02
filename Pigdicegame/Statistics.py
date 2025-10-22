@@ -1,3 +1,6 @@
+"""Unit tests for Statistics Class."""
+
+
 class Statistics:
     """Tracks player and game statistics for Pig Dice Game."""
 
@@ -8,7 +11,7 @@ class Statistics:
         self.total_rounds = 0
         self.total_points = 0
         self.highest_round_score = 0
-    
+
     def record_roll(self, roll_value):
         """Record each dice roll and check if it was a 1."""
         self.total_rolls += 1
