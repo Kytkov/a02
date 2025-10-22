@@ -1,4 +1,4 @@
-"""Unit tests for Statistics Class."""
+"""Statistics Class."""
 
 
 class Statistics:

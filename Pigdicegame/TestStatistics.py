@@ -1,3 +1,5 @@
+"""Unit tests for Statistics Class."""
+
 import unittest
 from Statistics import Statistics
 
@@ -34,7 +36,10 @@ class TestStatistics(unittest.TestCase):
         self.assertEqual(self.stats.total_ones, 2)
 
     def test_record_round_updates_rounds_and_points(self):
-        """record_round() should increase total_rounds and total_points correctly."""
+        """record_round() should increase total_rounds.
+
+        and total_points correctly.
+        """
         self.stats.record_round(7)
         self.stats.record_round(0)
         self.stats.record_round(12)
@@ -42,13 +47,19 @@ class TestStatistics(unittest.TestCase):
         self.assertEqual(self.stats.total_points, 19)
 
     def test_highest_round_score_tracks_max(self):
-        """highest_round_score should always reflect the highest round score recorded."""
+        """highest_round_score should always reflect.
+
+        the highest round score recorded.
+        """
         for score in [5, 11, 3, 11, 14, 2]:
             self.stats.record_round(score)
         self.assertEqual(self.stats.highest_round_score, 14)
 
     def test_average_score_per_round_zero_safe(self):
-        """average_score_per_round() should safely return 0 when no rounds have been played."""
+        """average_score_per_round() should safely return 0.
+
+        when no rounds have been played.
+        """
         self.assertEqual(self.stats.average_score_per_round(), 0)
 
     def test_average_score_per_round(self):
@@ -56,7 +67,8 @@ class TestStatistics(unittest.TestCase):
         self.stats.record_round(10)
         self.stats.record_round(5)
         self.stats.record_round(15)
-        self.assertAlmostEqual(self.stats.average_score_per_round(), 10.0, places=6)
+        self.assertAlmostEqual(self.stats.average_score_per_round(),
+                               10.0, places=6)
 
     def test_reset_restores_initial_state(self):
         """reset() should restore all fields to their initial values."""
@@ -77,7 +89,10 @@ class TestStatistics(unittest.TestCase):
         self.assertEqual(self.stats.average_score_per_round(), 0)
 
     def test_str_contains_key_numbers(self):
-        """__str__() should include the main statistics fields in the output string."""
+        """__str__() should include the main statistics.
+
+        fields in the output string.
+        """
         self.stats.record_roll(1)   # total_rolls=1, total_ones=1
         self.stats.record_round(9)  # total_rounds=1, total_points=9, highest=9
         s = str(self.stats)
