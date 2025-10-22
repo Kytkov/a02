@@ -34,14 +34,14 @@ class Intelligence:
 
     def easy(self, temp_score):
        """check if computer should roll or stay"""
-       if temp_score>=5:
+       if temp_score>=20:
           return True 
        
        return False
 
     def medium(self, temp_score, player_score):
         """check if computer should roll or stay"""
-        if temp_score>=15 and (player_score)-(self.score+temp_score)<30:
+        if temp_score>=15 and (player_score)-(self.score+temp_score)<10:
             
             return True
         
@@ -60,7 +60,7 @@ class Intelligence:
         #if temp_score>=35 and (player_score-temp_score+player_score)>50:
         #    self.add_score(temp_score)
         #   return True
-        if temp_score>=20 and (player_score)-(self.score+temp_score)>=30:
+        if temp_score>=5 and (player_score)-(self.score+temp_score)>=10:
             return True
         
         else:
@@ -94,8 +94,8 @@ class Intelligence:
 
     def make_choice(self, temp_score, player_score):
         if self.difficulty == "e":
-           self.easy(temp_score)
+           return self.easy(temp_score)
         elif self.difficulty == "m":
-            self.medium(temp_score, player_score)
+            return self.medium(temp_score, player_score)
         else:
-            self.hard(temp_score,player_score)
+            return self.hard(temp_score,player_score)

@@ -1,4 +1,3 @@
-#pylint: disable=C0103
 """Entry point for the Pig dice game application."""
 
 import game as Game
