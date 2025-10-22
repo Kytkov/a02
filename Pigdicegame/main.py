@@ -1,5 +1,12 @@
-def main():
-    print("A+N")
+"""Entry point for the Pig dice game application."""
+
+import Game as Game
+
+
+def main() -> None:
+    """Instantiate the game and start its main loop."""
+    g = Game.Game()
+    g.run()
 
 
 if __name__ == "__main__":

@@ -39,9 +39,12 @@ class DiceHand:
     rng: Optional[random.Random] = None
     _dice: List[Dice] = field(init=False, repr=False)
     _last: List[int] = field(default_factory=list, init=False, repr=False)
-    _cheat_next: Optional[List[int]] = field(default=None, init=False, repr=False)
+    _cheat_next: Optional[List[int]] = field(
+        default=None, init=False, repr=False
+        )
 
     def __post_init__(self) -> None:
+        """Validate inputs and initialize dice list."""
         if not isinstance(self.count, int) or self.count < 1:
             raise ValueError("count must be an integer >= 1")
         if not isinstance(self.sides, int) or self.sides < 2:
@@ -78,9 +81,13 @@ class DiceHand:
         # Apply cheat if scheduled
         if self._cheat_next is not None:
             vals = self._cheat_next
-            if len(vals) != self.count or any(not (1 <= v <= self.sides) for v in vals):
+            if (
+                len(vals) != self.count
+                or any(not (1 <= v <= self.sides) for v in vals)
+            ):
                 raise ValueError(
-                    "cheat values must be within dice range and match hand size"
+                    "cheat values must be within dice range "
+                    "and match hand size"
                 )
             self._last = list(vals)
             self._cheat_next = None
@@ -124,7 +131,7 @@ class DiceHand:
 
     # --------------------------- helpers ---------------------------
     def _randint(self, a: int, b: int) -> int:
-        """Wrapper to draw from injected RNG if present (for tests)."""
+        """Return a random int using the injected RNG if present(for tests)."""
         if self.rng is None:
             return random.randint(a, b)
         return self.rng.randint(a, b)
