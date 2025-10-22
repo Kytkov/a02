@@ -12,6 +12,7 @@ class Test_HighScore(unittest.TestCase):
         return obj
 
     def test_getHighScore(self):
+        """Get current highscore"""
         obj = self.make_object()
         self.assertEqual(obj.getHighScore(), 18)
 

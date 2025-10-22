@@ -1,3 +1,4 @@
+"""import objects"""
 import player as player
 import dice as dice
 import Intelligence as intelligence
@@ -7,11 +8,18 @@ class Game:
     """Handle game's running status"""
 
     def __init__(self):
-        self.isRunning = True
+        self.is_running = True
         self.player_has_current_hand = True
         self.score_collected_this_round = 0
+         # all objects
+        self.current_player = player.player()
+        self.current_intelligence = (
+                    intelligence.Intelligence()
+                )  # in constructor?
+        self.current_dice = dice.Dice()
 
     def player_turn(self):
+        """player's turn to play"""
         still_playing = True
         while still_playing:
             decision_after_roll_input = ""
@@ -49,28 +57,43 @@ class Game:
                 # FIX ? : says "roll another" here then "roll" again on loop's start
 
     def computer_turn(self):
+        """computer's turn to play"""
+
+        still_playing = True
+        while still_playing:
+            has_rolled = self.current_dice.roll()
+
+            if self.is_round_over(has_rolled):
+                break
+
+            self.score_collected_this_round += has_rolled
+
+            # depending on difficulty, keep on playing depedning on score or stand
+
+            should_stand = True if random.randint(0,1) == 0 else False
+            if should_stand:
+                print("Opponent has collected " + str(self.score_collected_this_round))
+                break
+        
+        print("Opponent rolled a one and lost")
         # depending on intelligence ..
         # call one of intelligence's methods depending on
         # chosen difficult level
-        print("ok")
-
-        # depending on intelligence, opponent will choose to keep..
-        # .. playing or stand
-
-        # current_intelligencce.add_score(score_collected_this_round)
-        print(0)
+        
 
     def is_round_over(self, roll):
+        """check if round is over"""
         return roll == 1
 
     def has_won(self, score):
+        """check if game is won"""
         return score >= 100
 
     def run(self):
         """Manage menu and handle both input and output"""
         MENU_OUTPUT = "Welcome to Pig Dice!\t\n1:New game\n2: Help"
         MENU_INPUT: int
-        gameOver = False
+        game_over = False
         DICE_SIDES: int
 
         current_player: player
@@ -79,8 +102,8 @@ class Game:
         dice_sides: int
         difficulty_level: str
 
-        while self.isRunning:
-            gameOver = False
+        while self.is_running:
+            game_over = False
 
             try:
                 MENU_INPUT = int(input(MENU_OUTPUT))
@@ -124,16 +147,14 @@ class Game:
                 ]:  # assign level automatically
                     difficulty_level = "E"
 
-                # all objects
-                self.current_player = player.player(PLAYER_NAME)
-                self.current_intelligence = (
-                    intelligence.Intelligence()
-                )  # in constructor?
-                self.current_dice = dice.Dice(DICE_SIDES)
-
                 self.current_intelligence.set_difficulty(difficulty_level)
 
-                while not gameOver:  # game loop
+
+                self.current_player = player.player(PLAYER_NAME)
+                self.current_intelligence = intelligence.Intelligence()
+                self.current_dice = dice.Dice(DICE_SIDES)
+
+                while not game_over:  # game loop
 
                     # the variabels below are general for both player and opponent.
                     # After every round, they are assigned those default values

@@ -1,31 +1,38 @@
 class Intelligence:
+    """The game logic for the computer"""
 
     def __init__(self):
         self.name = 'CPU'
         self.score = 0
 
     def set_score(self, score):
+        """set computer's score"""
         if not isinstance(score, int):
             raise ValueError('Score must be an integer')
         self.score = score
     
     def add_score(self, score):
+        """add computer's score"""
         if not isinstance(score, int):
             raise ValueError('Score must be an integer')
         self.score += score
     
     def get_score(self):
+        """return computer's score"""
         return self.score
 
     def set_name(self, name):
+        """set computer's name"""
         if not isinstance(name, str):
             raise ValueError('Name must be a string')
         self.name = name
 
     def get_name(self):
+        """return computer's name"""
         return self.name
 
     def easy(self, temp_score):
+       """check if computer should roll or stay"""
        if temp_score>=5:
            self.add_score(temp_score)
        
@@ -33,6 +40,7 @@ class Intelligence:
         return
 
     def medium(self, temp_score, player_score):
+        """check if computer should roll or stay"""
         if temp_score>=15 and (player_score)-(self.score+temp_score)<30:
             self.add_score(temp_score)
             return 'done'
@@ -47,16 +55,16 @@ class Intelligence:
     
 
     def hard(self, temp_score, player_score):
-        if temp_score>=35 and (player_score-temp_score+player_score)>50:
+        """check if computer should roll or stay"""
+        #if temp_score>=35 and (player_score-temp_score+player_score)>50:
+        #    self.add_score(temp_score)
+        #   return True
+        if temp_score>=20 and (player_score)-(self.score+temp_score)>=30:
             self.add_score(temp_score)
-            return 'done'
-
-        elif temp_score>=20 and (player_score)-(self.score+temp_score)>=30:
-            self.add_score(temp_score)
-            return 'done'
+            return True
         
         else:
-            return
+            return False
 
 
     def set_difficulty(self, level):
