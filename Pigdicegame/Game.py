@@ -18,7 +18,7 @@ class Game:
         self.current_intelligence = (
                     intelligence.Intelligence()
                 )  # in constructor?
-        self.current_dice = dice.Dice(0)
+        self.current_dice = dice.Dice(6)
         self.stats = stats.Statistics()
 
     def player_turn(self):
