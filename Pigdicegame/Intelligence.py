@@ -13,7 +13,7 @@ class Intelligence:
         if not isinstance(score, int):
             raise ValueError('Score must be an integer')
         self.score += score
-
+    
     def get_score(self):
         return self.score
 
