@@ -11,7 +11,7 @@ class Intelligence:
         if not isinstance(score, int):
             raise ValueError("Score must be an integer")
         self.score = score
-    
+
     def add_score(self, score):
         """Add computer's score."""
         if not isinstance(score, int):
@@ -61,7 +61,7 @@ class Intelligence:
         # if temp_score>=35 and (player_score-temp_score+player_score)>50:
         #    self.add_score(temp_score)
         #   return True
-        if temp_score>=5 or (player_score)-(self.score+temp_score)>=10:
+        if temp_score >= 5 or (player_score)-(self.score+temp_score) >= 10:
             return True
 
         else:
@@ -93,9 +93,9 @@ class Intelligence:
         #     return 'Incorrect input, Try again.'
 
     def make_choice(self, temp_score, player_score):
-    
+
         if self.difficulty == "easy":
-           return self.easy(temp_score)
+            return self.easy(temp_score)
         elif self.difficulty == "medium":
             return self.medium(temp_score, player_score)
         else:

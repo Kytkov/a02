@@ -3,20 +3,18 @@ from Intelligence import Intelligence
 
 
 class TestIntelligence(unittest.TestCase):
-    """
-    Unit tests for the Intelligence class.
+    """Unit tests for the Intelligence class.
+
     This test suite verifies the functionality of the Intelligence class,
     including score management, name setting, and difficulty handling.
     """
 
     def setUp(self):
         """Set up a new Intelligence instance before each test."""
-        
         self.cpu = Intelligence()
 
     def test_set_score(self):
         """Test setting a valid score and handling of invalid input types."""
-        
         self.cpu.set_score(1)
         self.assertEqual(self.cpu.get_score(), 1)
 
