@@ -101,7 +101,7 @@ class Game:
     def set_difficulty(self):
         """Set current difficult for game."""
         difficulty_level = input(
-                    "\nFinally, enter difficult level:\n " +
+                    "\nFinally, enter difficult level:\n" +
                     "E = EASY\nM = MEDIUM\nH = HARD\n"
                 )
         if difficulty_level.upper() not in [
@@ -197,21 +197,21 @@ class Game:
                     not self.player_has_current_hand
                 )  # change turn
 
-                game_over = True
-                try:
-                    MENU_INPUT_GAME = int(input(MENU_OUTPUT_GAME))
+            game_over = True
+            try:
+                MENU_INPUT_GAME = int(input(MENU_OUTPUT_GAME))
 
-                    if MENU_INPUT_GAME == 1:
-                        print("\n* NEW ROUND *\n")
-                        game_over = False
+                if MENU_INPUT_GAME == 1:
+                    print("\n* NEW ROUND *\n")
+                    game_over = False
 
-                    elif MENU_INPUT_GAME == 2:
-                        print("\n" + self.stats.__str__())
+                elif MENU_INPUT_GAME == 2:
+                    print("\n" + self.stats.__str__())
 
-                    elif MENU_INPUT_GAME == 3:
-                        self.set_difficulty()
+                elif MENU_INPUT_GAME == 3:
+                    self.set_difficulty()
 
-                    elif MENU_INPUT_GAME == 4:
-                        self.is_running = False
-                except ValueError:
-                    print("Please input valid number")
+                elif MENU_INPUT_GAME == 4:
+                    self.is_running = False
+            except ValueError:
+                print("Please input valid number")
