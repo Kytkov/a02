@@ -27,7 +27,7 @@ class Game:
         while still_playing:
             decision_after_roll_input = ""
 
-            roll_input = input("Press R to roll dice")
+            roll_input = input("Press R to roll dice\n")
 
             if roll_input.lower().strip() == "r":
                 has_rolled = self.current_dice.roll()
@@ -66,7 +66,6 @@ class Game:
 
     def computer_turn(self):
         """Computer's turn to play."""
-        print("in computer now")
         still_playing = True
         opponent_final_message = "Opponent has rolled "
         while still_playing:
@@ -102,11 +101,11 @@ class Game:
 
     def has_won(self, score):
         """check if game is won"""
-        return score >=10
+        return score >=15
     
     def set_difficulty(self):
         difficulty_level = input(
-                    "Finally, enter difficult level:\nE = EASY\nM = MEDIUM\nH = HARD"
+                    "\nFinally, enter difficult level:\nE = EASY\nM = MEDIUM\nH = HARD\n"
                 )
         if difficulty_level.upper() not in [
                     "E",
@@ -122,8 +121,8 @@ class Game:
 
     def run(self):
         """Manage menu and handle both input and output"""
-        MENU_OUTPUT = "Welcome to Pig Dice!\t\n1:New game"
-        MENU_OUTPUT_GAME = "Keep playing?\n1: New round\n2: View stats\n3: Change difficulty\n4: Quit"
+        MENU_OUTPUT = "Welcome to Pig Dice!\t\n1:New game\n"
+        MENU_OUTPUT_GAME = "\nKeep playing?\n1: New round\n2: View stats\n3: Change difficulty\n4: Quit\n"
         MENU_INPUT: int
         game_over = False
         DICE_SIDES: int
@@ -170,8 +169,8 @@ class Game:
 
         while self.is_running:
                 self.reset_scores()
-                game_over = False
-                print("\n* NEW ROUND *\n")
+                
+                
 
 
                 while not game_over:  # game loop
@@ -181,7 +180,6 @@ class Game:
                 # After every round, they are assigned those default values
 
                     if self.player_has_current_hand:
-                        print("players turn")
                         self.player_turn()
                     else:
                         self.computer_turn()
@@ -199,16 +197,19 @@ class Game:
                     self.player_has_current_hand = (
                         not self.player_has_current_hand
                     )  # change turn
-                    print("self.player_has_current_hand",self.player_has_current_hand)
+                    
                 
-                
+                game_over = True
                 try: 
+                   
                     MENU_INPUT_GAME = int(input(MENU_OUTPUT_GAME))
+
 
                 
 
                     if MENU_INPUT_GAME == 1:
-                        continue
+                        print("\n* NEW ROUND *\n")
+                        game_over = False
 
                     elif MENU_INPUT_GAME == 2:
                         print("\n" + self.stats.__str__())
