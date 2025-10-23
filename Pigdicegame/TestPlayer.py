@@ -15,7 +15,7 @@ class TestPlayer(unittest.TestCase):
         """
         Set up a new player instance before each test.
         """
-        self.p1 = player("Marcus")
+        self.p1 = Player("Marcus")
 
     def test_set_score(self):
         """
