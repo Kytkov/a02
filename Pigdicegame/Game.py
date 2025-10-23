@@ -104,6 +104,7 @@ class Game:
         return score >=15
     
     def set_difficulty(self):
+        """set current difficult for game"""
         difficulty_level = input(
                     "\nFinally, enter difficult level:\nE = EASY\nM = MEDIUM\nH = HARD\n"
                 )
@@ -116,6 +117,7 @@ class Game:
         self.current_intelligence.set_difficulty(difficulty_level)
     
     def reset_scores(self):
+        """reset all player scores"""
         self.current_player.set_score(0)
         self.current_intelligence.set_score(0)
 
@@ -169,10 +171,7 @@ class Game:
 
         while self.is_running:
                 self.reset_scores()
-                
-                
-
-
+              
                 while not game_over:  # game loop
                     self.score_collected_this_round = 0
 
@@ -192,20 +191,15 @@ class Game:
                         print("\n🤖👑Opponent won!\n")
                         self.stats.record_round(self.current_player.get_score())
                         break
-
-                    
+ 
                     self.player_has_current_hand = (
                         not self.player_has_current_hand
                     )  # change turn
                     
-                
                 game_over = True
                 try: 
                    
                     MENU_INPUT_GAME = int(input(MENU_OUTPUT_GAME))
-
-
-                
 
                     if MENU_INPUT_GAME == 1:
                         print("\n* NEW ROUND *\n")
@@ -221,13 +215,3 @@ class Game:
                         self.is_running = False
                 except ValueError:
                      print("Please input valid number")
-            
-            
-
-                
-
-
-
-# if __name__ == '__main__':
-#     g = Game()
-#     g.run()
