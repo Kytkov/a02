@@ -226,11 +226,11 @@ class Game:
             
             if MENU_INPUT == 2:
                 print(
-                    "Each player may roll the die as many times as they wish during their turn." 
-                    "If a 1 is rolled, the player loses all points gained during that turn, " 
-                    "and control passes to the next player. " 
+                    "Each player may roll the die as many times as they wish during their turn.\n" 
+                    "If a 1 is rolled, the player loses all points gained during that turn,\n" 
+                    "and control passes to the next player.\n" 
                     "A player may choose to hold, adding the accumulated turn"
-                    " points to their total score. "
+                    " points to their total score.\n"
                     "The first player to reach 100 points wins the game.\n"
                 )
                 
