@@ -19,8 +19,7 @@ Pig is a simple dice game where players take turns rolling a die to accumulate p
 ---
 
 ## Features
-- Single-player mode (player vs. computer)  
-- Two-player mode  
+- Single-player mode (player vs. computer)    
 - Configurable player names  
 - Persistent high score tracking  
 - Computer opponent with adjustable difficulty (risk-based decision-making)  
@@ -69,9 +68,7 @@ py Pigdicegame/main.py
 ```
 
 You will be presented with a text-based menu that allows you to:
-- Start a new game  
-- Choose between single-player or two-player mode  
-- View rules  
+- Start a new game    
 - Check high scores  
 - Quit or restart the game  
 
