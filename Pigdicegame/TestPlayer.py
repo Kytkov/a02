@@ -1,5 +1,5 @@
 import unittest
-from Pigdicegame.player import Player
+from player import Player
 
 
 class TestPlayer(unittest.TestCase):
@@ -31,7 +31,8 @@ class TestPlayer(unittest.TestCase):
         """
         Test adding a valid score and handling invalid score input.
         """
-        self.assertEqual(self.p1.add_score(5), 5)
+        self.p1.add_score(5)
+        self.assertEqual(self.p1.score, 5)
 
         with self.assertRaises(ValueError):
             self.p1.add_score("A")
@@ -40,7 +41,8 @@ class TestPlayer(unittest.TestCase):
         """
         Test setting a valid name and handling invalid name input.
         """
-        self.assertEqual(self.p1.set_name("Marcus123"), "Marcus123")
+        self.p1.set_name('Marcus123')
+        self.assertEqual(self.p1.name, "Marcus123")
 
         with self.assertRaises(ValueError):
             self.p1.set_name(8)

@@ -30,9 +30,8 @@ class TestIntelligence(unittest.TestCase):
         """
         Test adding to the score and validating input types.
         """
-        result = self.cpu.add_score(2)
-        self.assertEqual(result, 2)
-        self.assertEqual(self.cpu.get_score(), 2)
+        self.cpu.add_score(2)
+        self.assertEqual(self.cpu.score, 2)
 
         with self.assertRaises(ValueError):
             self.cpu.add_score("C")
@@ -53,7 +52,8 @@ class TestIntelligence(unittest.TestCase):
         """
         Test setting a valid name and handling of invalid input types.
         """
-        self.assertEqual(self.cpu.set_name("CPU123"), "CPU123")
+        self.cpu.set_name("CPU123")
+        self.assertEqual(self.cpu.name, "CPU123")
 
         with self.assertRaises(ValueError):
             self.cpu.set_name(192)
