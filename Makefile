@@ -52,6 +52,14 @@ doc:
 	mkdir -p doc/api
 	PYTHONPATH="$(PKG)$(PATHSEP)$$PYTHONPATH" pdoc -o doc/api $(PKG)
 
+.PHONY: uml
+uml:
+	@mkdir -p docs/uml
+	@python -m pylint.pyreverse.main -o png -p Pigdicegame -d docs/uml Pigdicegame || ( \
+		echo "Graphviz missing, falling back to Mermaid…"; \
+		python -m pylint.pyreverse.main -o mmd -p Pigdicegame -d docs/uml Pigdicegame )
+	@echo "Done. Check docs/uml/"
+
 # ---- Cleanup ----
 clean-doc:
 	-rm -rf doc/api

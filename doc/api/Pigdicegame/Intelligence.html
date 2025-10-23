@@ -159,46 +159,45 @@
 </span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a>        <span class="c1"># if temp_score&gt;=35 and (player_score-temp_score+player_score)&gt;50:</span>
 </span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a>        <span class="c1">#    self.add_score(temp_score)</span>
 </span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a>        <span class="c1">#   return True</span>
-</span><span id="L-64"><a href="#L-64"><span class="linenos"> 64</span></a>        <span class="k">if</span> <span class="p">(</span>
-</span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a>            <span class="n">temp_score</span> <span class="o">&gt;=</span> <span class="mi">20</span>
-</span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a>            <span class="ow">and</span> <span class="p">(</span><span class="n">player_score</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+</span> <span class="n">temp_score</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">30</span>
-</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a>        <span class="p">):</span>
-</span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a>            <span class="k">return</span> <span class="kc">True</span>
+</span><span id="L-64"><a href="#L-64"><span class="linenos"> 64</span></a>        <span class="k">if</span> <span class="n">temp_score</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">or</span> <span class="p">(</span><span class="n">player_score</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="o">+</span><span class="n">temp_score</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+</span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a>            <span class="k">return</span> <span class="kc">True</span>
+</span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a>
+</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a>            <span class="k">return</span> <span class="kc">False</span>
 </span><span id="L-69"><a href="#L-69"><span class="linenos"> 69</span></a>
-</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a>            <span class="k">return</span> <span class="kc">False</span>
-</span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a>
-</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
-</span><span id="L-74"><a href="#L-74"><span class="linenos"> 74</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a>            <span class="k">return</span> <span class="s2">&quot;Incorrect input, Try again.&quot;</span>
-</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a>
-</span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a>        <span class="n">level</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-</span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a>        <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;e&quot;</span><span class="p">:</span>
-</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;easy&quot;</span>
-</span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a>        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;m&quot;</span><span class="p">:</span>
-</span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;medium&quot;</span>
-</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a>        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;h&quot;</span><span class="p">:</span>
-</span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;hard&quot;</span>
-</span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a>            <span class="k">return</span> <span class="s2">&quot;Incorrect input, Try again.&quot;</span>
-</span><span id="L-86"><a href="#L-86"><span class="linenos"> 86</span></a>
-</span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a>        <span class="c1"># level = level.lower()</span>
-</span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a>        <span class="c1"># if level == &quot;easy&quot;:</span>
-</span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a>        <span class="c1">#     return self.easy()</span>
-</span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a>        <span class="c1"># elif level == &quot;medium&quot;:</span>
-</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a>        <span class="c1">#     return self.medium()</span>
-</span><span id="L-92"><a href="#L-92"><span class="linenos"> 92</span></a>        <span class="c1"># elif level == &quot;hard&quot;:</span>
-</span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a>        <span class="c1">#     return self.hard()</span>
-</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a>        <span class="c1"># else:</span>
-</span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a>        <span class="c1">#     return &#39;Incorrect input, Try again.&#39;</span>
+</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+</span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a>            <span class="k">return</span> <span class="s2">&quot;Incorrect input, Try again.&quot;</span>
+</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a>
+</span><span id="L-74"><a href="#L-74"><span class="linenos"> 74</span></a>        <span class="n">level</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a>
+</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a>        <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;e&quot;</span><span class="p">:</span>
+</span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;easy&quot;</span>
+</span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a>        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;m&quot;</span><span class="p">:</span>
+</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;medium&quot;</span>
+</span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a>        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;h&quot;</span><span class="p">:</span>
+</span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;hard&quot;</span>
+</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a>            <span class="k">return</span> <span class="s2">&quot;Incorrect input, Try again.&quot;</span>
+</span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a>
+</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a>        <span class="c1"># level = level.lower()</span>
+</span><span id="L-86"><a href="#L-86"><span class="linenos"> 86</span></a>        <span class="c1"># if level == &quot;easy&quot;:</span>
+</span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a>        <span class="c1">#     return self.easy()</span>
+</span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a>        <span class="c1"># elif level == &quot;medium&quot;:</span>
+</span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a>        <span class="c1">#     return self.medium()</span>
+</span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a>        <span class="c1"># elif level == &quot;hard&quot;:</span>
+</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a>        <span class="c1">#     return self.hard()</span>
+</span><span id="L-92"><a href="#L-92"><span class="linenos"> 92</span></a>        <span class="c1"># else:</span>
+</span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a>        <span class="c1">#     return &#39;Incorrect input, Try again.&#39;</span>
+</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a>
+</span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">make_choice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">):</span>
 </span><span id="L-96"><a href="#L-96"><span class="linenos"> 96</span></a>
-</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">make_choice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">):</span>
-</span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="s2">&quot;e&quot;</span><span class="p">:</span>
-</span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">easy</span><span class="p">(</span><span class="n">temp_score</span><span class="p">)</span>
-</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="s2">&quot;m&quot;</span><span class="p">:</span>
-</span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">medium</span><span class="p">(</span><span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">)</span>
-</span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">hard</span><span class="p">(</span><span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">)</span>
+</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="s2">&quot;easy&quot;</span><span class="p">:</span>
+</span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">easy</span><span class="p">(</span><span class="n">temp_score</span><span class="p">)</span>
+</span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="s2">&quot;medium&quot;</span><span class="p">:</span>
+</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">medium</span><span class="p">(</span><span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">)</span>
+</span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">hard</span><span class="p">(</span><span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -277,46 +276,45 @@
 </span><span id="Intelligence-62"><a href="#Intelligence-62"><span class="linenos"> 62</span></a>        <span class="c1"># if temp_score&gt;=35 and (player_score-temp_score+player_score)&gt;50:</span>
 </span><span id="Intelligence-63"><a href="#Intelligence-63"><span class="linenos"> 63</span></a>        <span class="c1">#    self.add_score(temp_score)</span>
 </span><span id="Intelligence-64"><a href="#Intelligence-64"><span class="linenos"> 64</span></a>        <span class="c1">#   return True</span>
-</span><span id="Intelligence-65"><a href="#Intelligence-65"><span class="linenos"> 65</span></a>        <span class="k">if</span> <span class="p">(</span>
-</span><span id="Intelligence-66"><a href="#Intelligence-66"><span class="linenos"> 66</span></a>            <span class="n">temp_score</span> <span class="o">&gt;=</span> <span class="mi">20</span>
-</span><span id="Intelligence-67"><a href="#Intelligence-67"><span class="linenos"> 67</span></a>            <span class="ow">and</span> <span class="p">(</span><span class="n">player_score</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+</span> <span class="n">temp_score</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">30</span>
-</span><span id="Intelligence-68"><a href="#Intelligence-68"><span class="linenos"> 68</span></a>        <span class="p">):</span>
-</span><span id="Intelligence-69"><a href="#Intelligence-69"><span class="linenos"> 69</span></a>            <span class="k">return</span> <span class="kc">True</span>
+</span><span id="Intelligence-65"><a href="#Intelligence-65"><span class="linenos"> 65</span></a>        <span class="k">if</span> <span class="n">temp_score</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">or</span> <span class="p">(</span><span class="n">player_score</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="o">+</span><span class="n">temp_score</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+</span><span id="Intelligence-66"><a href="#Intelligence-66"><span class="linenos"> 66</span></a>            <span class="k">return</span> <span class="kc">True</span>
+</span><span id="Intelligence-67"><a href="#Intelligence-67"><span class="linenos"> 67</span></a>
+</span><span id="Intelligence-68"><a href="#Intelligence-68"><span class="linenos"> 68</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Intelligence-69"><a href="#Intelligence-69"><span class="linenos"> 69</span></a>            <span class="k">return</span> <span class="kc">False</span>
 </span><span id="Intelligence-70"><a href="#Intelligence-70"><span class="linenos"> 70</span></a>
-</span><span id="Intelligence-71"><a href="#Intelligence-71"><span class="linenos"> 71</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Intelligence-72"><a href="#Intelligence-72"><span class="linenos"> 72</span></a>            <span class="k">return</span> <span class="kc">False</span>
-</span><span id="Intelligence-73"><a href="#Intelligence-73"><span class="linenos"> 73</span></a>
-</span><span id="Intelligence-74"><a href="#Intelligence-74"><span class="linenos"> 74</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
-</span><span id="Intelligence-75"><a href="#Intelligence-75"><span class="linenos"> 75</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="Intelligence-76"><a href="#Intelligence-76"><span class="linenos"> 76</span></a>            <span class="k">return</span> <span class="s2">&quot;Incorrect input, Try again.&quot;</span>
-</span><span id="Intelligence-77"><a href="#Intelligence-77"><span class="linenos"> 77</span></a>
-</span><span id="Intelligence-78"><a href="#Intelligence-78"><span class="linenos"> 78</span></a>        <span class="n">level</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-</span><span id="Intelligence-79"><a href="#Intelligence-79"><span class="linenos"> 79</span></a>        <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;e&quot;</span><span class="p">:</span>
-</span><span id="Intelligence-80"><a href="#Intelligence-80"><span class="linenos"> 80</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;easy&quot;</span>
-</span><span id="Intelligence-81"><a href="#Intelligence-81"><span class="linenos"> 81</span></a>        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;m&quot;</span><span class="p">:</span>
-</span><span id="Intelligence-82"><a href="#Intelligence-82"><span class="linenos"> 82</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;medium&quot;</span>
-</span><span id="Intelligence-83"><a href="#Intelligence-83"><span class="linenos"> 83</span></a>        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;h&quot;</span><span class="p">:</span>
-</span><span id="Intelligence-84"><a href="#Intelligence-84"><span class="linenos"> 84</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;hard&quot;</span>
-</span><span id="Intelligence-85"><a href="#Intelligence-85"><span class="linenos"> 85</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Intelligence-86"><a href="#Intelligence-86"><span class="linenos"> 86</span></a>            <span class="k">return</span> <span class="s2">&quot;Incorrect input, Try again.&quot;</span>
-</span><span id="Intelligence-87"><a href="#Intelligence-87"><span class="linenos"> 87</span></a>
-</span><span id="Intelligence-88"><a href="#Intelligence-88"><span class="linenos"> 88</span></a>        <span class="c1"># level = level.lower()</span>
-</span><span id="Intelligence-89"><a href="#Intelligence-89"><span class="linenos"> 89</span></a>        <span class="c1"># if level == &quot;easy&quot;:</span>
-</span><span id="Intelligence-90"><a href="#Intelligence-90"><span class="linenos"> 90</span></a>        <span class="c1">#     return self.easy()</span>
-</span><span id="Intelligence-91"><a href="#Intelligence-91"><span class="linenos"> 91</span></a>        <span class="c1"># elif level == &quot;medium&quot;:</span>
-</span><span id="Intelligence-92"><a href="#Intelligence-92"><span class="linenos"> 92</span></a>        <span class="c1">#     return self.medium()</span>
-</span><span id="Intelligence-93"><a href="#Intelligence-93"><span class="linenos"> 93</span></a>        <span class="c1"># elif level == &quot;hard&quot;:</span>
-</span><span id="Intelligence-94"><a href="#Intelligence-94"><span class="linenos"> 94</span></a>        <span class="c1">#     return self.hard()</span>
-</span><span id="Intelligence-95"><a href="#Intelligence-95"><span class="linenos"> 95</span></a>        <span class="c1"># else:</span>
-</span><span id="Intelligence-96"><a href="#Intelligence-96"><span class="linenos"> 96</span></a>        <span class="c1">#     return &#39;Incorrect input, Try again.&#39;</span>
+</span><span id="Intelligence-71"><a href="#Intelligence-71"><span class="linenos"> 71</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+</span><span id="Intelligence-72"><a href="#Intelligence-72"><span class="linenos"> 72</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="Intelligence-73"><a href="#Intelligence-73"><span class="linenos"> 73</span></a>            <span class="k">return</span> <span class="s2">&quot;Incorrect input, Try again.&quot;</span>
+</span><span id="Intelligence-74"><a href="#Intelligence-74"><span class="linenos"> 74</span></a>
+</span><span id="Intelligence-75"><a href="#Intelligence-75"><span class="linenos"> 75</span></a>        <span class="n">level</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span id="Intelligence-76"><a href="#Intelligence-76"><span class="linenos"> 76</span></a>
+</span><span id="Intelligence-77"><a href="#Intelligence-77"><span class="linenos"> 77</span></a>        <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;e&quot;</span><span class="p">:</span>
+</span><span id="Intelligence-78"><a href="#Intelligence-78"><span class="linenos"> 78</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;easy&quot;</span>
+</span><span id="Intelligence-79"><a href="#Intelligence-79"><span class="linenos"> 79</span></a>        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;m&quot;</span><span class="p">:</span>
+</span><span id="Intelligence-80"><a href="#Intelligence-80"><span class="linenos"> 80</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;medium&quot;</span>
+</span><span id="Intelligence-81"><a href="#Intelligence-81"><span class="linenos"> 81</span></a>        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;h&quot;</span><span class="p">:</span>
+</span><span id="Intelligence-82"><a href="#Intelligence-82"><span class="linenos"> 82</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;hard&quot;</span>
+</span><span id="Intelligence-83"><a href="#Intelligence-83"><span class="linenos"> 83</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Intelligence-84"><a href="#Intelligence-84"><span class="linenos"> 84</span></a>            <span class="k">return</span> <span class="s2">&quot;Incorrect input, Try again.&quot;</span>
+</span><span id="Intelligence-85"><a href="#Intelligence-85"><span class="linenos"> 85</span></a>
+</span><span id="Intelligence-86"><a href="#Intelligence-86"><span class="linenos"> 86</span></a>        <span class="c1"># level = level.lower()</span>
+</span><span id="Intelligence-87"><a href="#Intelligence-87"><span class="linenos"> 87</span></a>        <span class="c1"># if level == &quot;easy&quot;:</span>
+</span><span id="Intelligence-88"><a href="#Intelligence-88"><span class="linenos"> 88</span></a>        <span class="c1">#     return self.easy()</span>
+</span><span id="Intelligence-89"><a href="#Intelligence-89"><span class="linenos"> 89</span></a>        <span class="c1"># elif level == &quot;medium&quot;:</span>
+</span><span id="Intelligence-90"><a href="#Intelligence-90"><span class="linenos"> 90</span></a>        <span class="c1">#     return self.medium()</span>
+</span><span id="Intelligence-91"><a href="#Intelligence-91"><span class="linenos"> 91</span></a>        <span class="c1"># elif level == &quot;hard&quot;:</span>
+</span><span id="Intelligence-92"><a href="#Intelligence-92"><span class="linenos"> 92</span></a>        <span class="c1">#     return self.hard()</span>
+</span><span id="Intelligence-93"><a href="#Intelligence-93"><span class="linenos"> 93</span></a>        <span class="c1"># else:</span>
+</span><span id="Intelligence-94"><a href="#Intelligence-94"><span class="linenos"> 94</span></a>        <span class="c1">#     return &#39;Incorrect input, Try again.&#39;</span>
+</span><span id="Intelligence-95"><a href="#Intelligence-95"><span class="linenos"> 95</span></a>
+</span><span id="Intelligence-96"><a href="#Intelligence-96"><span class="linenos"> 96</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">make_choice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">):</span>
 </span><span id="Intelligence-97"><a href="#Intelligence-97"><span class="linenos"> 97</span></a>
-</span><span id="Intelligence-98"><a href="#Intelligence-98"><span class="linenos"> 98</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">make_choice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">):</span>
-</span><span id="Intelligence-99"><a href="#Intelligence-99"><span class="linenos"> 99</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="s2">&quot;e&quot;</span><span class="p">:</span>
-</span><span id="Intelligence-100"><a href="#Intelligence-100"><span class="linenos">100</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">easy</span><span class="p">(</span><span class="n">temp_score</span><span class="p">)</span>
-</span><span id="Intelligence-101"><a href="#Intelligence-101"><span class="linenos">101</span></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="s2">&quot;m&quot;</span><span class="p">:</span>
-</span><span id="Intelligence-102"><a href="#Intelligence-102"><span class="linenos">102</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">medium</span><span class="p">(</span><span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">)</span>
-</span><span id="Intelligence-103"><a href="#Intelligence-103"><span class="linenos">103</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Intelligence-104"><a href="#Intelligence-104"><span class="linenos">104</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">hard</span><span class="p">(</span><span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">)</span>
+</span><span id="Intelligence-98"><a href="#Intelligence-98"><span class="linenos"> 98</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="s2">&quot;easy&quot;</span><span class="p">:</span>
+</span><span id="Intelligence-99"><a href="#Intelligence-99"><span class="linenos"> 99</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">easy</span><span class="p">(</span><span class="n">temp_score</span><span class="p">)</span>
+</span><span id="Intelligence-100"><a href="#Intelligence-100"><span class="linenos">100</span></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="s2">&quot;medium&quot;</span><span class="p">:</span>
+</span><span id="Intelligence-101"><a href="#Intelligence-101"><span class="linenos">101</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">medium</span><span class="p">(</span><span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">)</span>
+</span><span id="Intelligence-102"><a href="#Intelligence-102"><span class="linenos">102</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Intelligence-103"><a href="#Intelligence-103"><span class="linenos">103</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">hard</span><span class="p">(</span><span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -549,14 +547,11 @@
 </span><span id="Intelligence.hard-62"><a href="#Intelligence.hard-62"><span class="linenos">62</span></a>        <span class="c1"># if temp_score&gt;=35 and (player_score-temp_score+player_score)&gt;50:</span>
 </span><span id="Intelligence.hard-63"><a href="#Intelligence.hard-63"><span class="linenos">63</span></a>        <span class="c1">#    self.add_score(temp_score)</span>
 </span><span id="Intelligence.hard-64"><a href="#Intelligence.hard-64"><span class="linenos">64</span></a>        <span class="c1">#   return True</span>
-</span><span id="Intelligence.hard-65"><a href="#Intelligence.hard-65"><span class="linenos">65</span></a>        <span class="k">if</span> <span class="p">(</span>
-</span><span id="Intelligence.hard-66"><a href="#Intelligence.hard-66"><span class="linenos">66</span></a>            <span class="n">temp_score</span> <span class="o">&gt;=</span> <span class="mi">20</span>
-</span><span id="Intelligence.hard-67"><a href="#Intelligence.hard-67"><span class="linenos">67</span></a>            <span class="ow">and</span> <span class="p">(</span><span class="n">player_score</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+</span> <span class="n">temp_score</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">30</span>
-</span><span id="Intelligence.hard-68"><a href="#Intelligence.hard-68"><span class="linenos">68</span></a>        <span class="p">):</span>
-</span><span id="Intelligence.hard-69"><a href="#Intelligence.hard-69"><span class="linenos">69</span></a>            <span class="k">return</span> <span class="kc">True</span>
-</span><span id="Intelligence.hard-70"><a href="#Intelligence.hard-70"><span class="linenos">70</span></a>
-</span><span id="Intelligence.hard-71"><a href="#Intelligence.hard-71"><span class="linenos">71</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Intelligence.hard-72"><a href="#Intelligence.hard-72"><span class="linenos">72</span></a>            <span class="k">return</span> <span class="kc">False</span>
+</span><span id="Intelligence.hard-65"><a href="#Intelligence.hard-65"><span class="linenos">65</span></a>        <span class="k">if</span> <span class="n">temp_score</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">or</span> <span class="p">(</span><span class="n">player_score</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="o">+</span><span class="n">temp_score</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+</span><span id="Intelligence.hard-66"><a href="#Intelligence.hard-66"><span class="linenos">66</span></a>            <span class="k">return</span> <span class="kc">True</span>
+</span><span id="Intelligence.hard-67"><a href="#Intelligence.hard-67"><span class="linenos">67</span></a>
+</span><span id="Intelligence.hard-68"><a href="#Intelligence.hard-68"><span class="linenos">68</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Intelligence.hard-69"><a href="#Intelligence.hard-69"><span class="linenos">69</span></a>            <span class="k">return</span> <span class="kc">False</span>
 </span></pre></div>
 
 
@@ -576,29 +571,30 @@
 
     </div>
     <a class="headerlink" href="#Intelligence.set_difficulty"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Intelligence.set_difficulty-74"><a href="#Intelligence.set_difficulty-74"><span class="linenos">74</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
-</span><span id="Intelligence.set_difficulty-75"><a href="#Intelligence.set_difficulty-75"><span class="linenos">75</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="Intelligence.set_difficulty-76"><a href="#Intelligence.set_difficulty-76"><span class="linenos">76</span></a>            <span class="k">return</span> <span class="s2">&quot;Incorrect input, Try again.&quot;</span>
-</span><span id="Intelligence.set_difficulty-77"><a href="#Intelligence.set_difficulty-77"><span class="linenos">77</span></a>
-</span><span id="Intelligence.set_difficulty-78"><a href="#Intelligence.set_difficulty-78"><span class="linenos">78</span></a>        <span class="n">level</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-</span><span id="Intelligence.set_difficulty-79"><a href="#Intelligence.set_difficulty-79"><span class="linenos">79</span></a>        <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;e&quot;</span><span class="p">:</span>
-</span><span id="Intelligence.set_difficulty-80"><a href="#Intelligence.set_difficulty-80"><span class="linenos">80</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;easy&quot;</span>
-</span><span id="Intelligence.set_difficulty-81"><a href="#Intelligence.set_difficulty-81"><span class="linenos">81</span></a>        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;m&quot;</span><span class="p">:</span>
-</span><span id="Intelligence.set_difficulty-82"><a href="#Intelligence.set_difficulty-82"><span class="linenos">82</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;medium&quot;</span>
-</span><span id="Intelligence.set_difficulty-83"><a href="#Intelligence.set_difficulty-83"><span class="linenos">83</span></a>        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;h&quot;</span><span class="p">:</span>
-</span><span id="Intelligence.set_difficulty-84"><a href="#Intelligence.set_difficulty-84"><span class="linenos">84</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;hard&quot;</span>
-</span><span id="Intelligence.set_difficulty-85"><a href="#Intelligence.set_difficulty-85"><span class="linenos">85</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Intelligence.set_difficulty-86"><a href="#Intelligence.set_difficulty-86"><span class="linenos">86</span></a>            <span class="k">return</span> <span class="s2">&quot;Incorrect input, Try again.&quot;</span>
-</span><span id="Intelligence.set_difficulty-87"><a href="#Intelligence.set_difficulty-87"><span class="linenos">87</span></a>
-</span><span id="Intelligence.set_difficulty-88"><a href="#Intelligence.set_difficulty-88"><span class="linenos">88</span></a>        <span class="c1"># level = level.lower()</span>
-</span><span id="Intelligence.set_difficulty-89"><a href="#Intelligence.set_difficulty-89"><span class="linenos">89</span></a>        <span class="c1"># if level == &quot;easy&quot;:</span>
-</span><span id="Intelligence.set_difficulty-90"><a href="#Intelligence.set_difficulty-90"><span class="linenos">90</span></a>        <span class="c1">#     return self.easy()</span>
-</span><span id="Intelligence.set_difficulty-91"><a href="#Intelligence.set_difficulty-91"><span class="linenos">91</span></a>        <span class="c1"># elif level == &quot;medium&quot;:</span>
-</span><span id="Intelligence.set_difficulty-92"><a href="#Intelligence.set_difficulty-92"><span class="linenos">92</span></a>        <span class="c1">#     return self.medium()</span>
-</span><span id="Intelligence.set_difficulty-93"><a href="#Intelligence.set_difficulty-93"><span class="linenos">93</span></a>        <span class="c1"># elif level == &quot;hard&quot;:</span>
-</span><span id="Intelligence.set_difficulty-94"><a href="#Intelligence.set_difficulty-94"><span class="linenos">94</span></a>        <span class="c1">#     return self.hard()</span>
-</span><span id="Intelligence.set_difficulty-95"><a href="#Intelligence.set_difficulty-95"><span class="linenos">95</span></a>        <span class="c1"># else:</span>
-</span><span id="Intelligence.set_difficulty-96"><a href="#Intelligence.set_difficulty-96"><span class="linenos">96</span></a>        <span class="c1">#     return &#39;Incorrect input, Try again.&#39;</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Intelligence.set_difficulty-71"><a href="#Intelligence.set_difficulty-71"><span class="linenos">71</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+</span><span id="Intelligence.set_difficulty-72"><a href="#Intelligence.set_difficulty-72"><span class="linenos">72</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="Intelligence.set_difficulty-73"><a href="#Intelligence.set_difficulty-73"><span class="linenos">73</span></a>            <span class="k">return</span> <span class="s2">&quot;Incorrect input, Try again.&quot;</span>
+</span><span id="Intelligence.set_difficulty-74"><a href="#Intelligence.set_difficulty-74"><span class="linenos">74</span></a>
+</span><span id="Intelligence.set_difficulty-75"><a href="#Intelligence.set_difficulty-75"><span class="linenos">75</span></a>        <span class="n">level</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span id="Intelligence.set_difficulty-76"><a href="#Intelligence.set_difficulty-76"><span class="linenos">76</span></a>
+</span><span id="Intelligence.set_difficulty-77"><a href="#Intelligence.set_difficulty-77"><span class="linenos">77</span></a>        <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;e&quot;</span><span class="p">:</span>
+</span><span id="Intelligence.set_difficulty-78"><a href="#Intelligence.set_difficulty-78"><span class="linenos">78</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;easy&quot;</span>
+</span><span id="Intelligence.set_difficulty-79"><a href="#Intelligence.set_difficulty-79"><span class="linenos">79</span></a>        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;m&quot;</span><span class="p">:</span>
+</span><span id="Intelligence.set_difficulty-80"><a href="#Intelligence.set_difficulty-80"><span class="linenos">80</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;medium&quot;</span>
+</span><span id="Intelligence.set_difficulty-81"><a href="#Intelligence.set_difficulty-81"><span class="linenos">81</span></a>        <span class="k">elif</span> <span class="n">level</span> <span class="o">==</span> <span class="s2">&quot;h&quot;</span><span class="p">:</span>
+</span><span id="Intelligence.set_difficulty-82"><a href="#Intelligence.set_difficulty-82"><span class="linenos">82</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="s2">&quot;hard&quot;</span>
+</span><span id="Intelligence.set_difficulty-83"><a href="#Intelligence.set_difficulty-83"><span class="linenos">83</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Intelligence.set_difficulty-84"><a href="#Intelligence.set_difficulty-84"><span class="linenos">84</span></a>            <span class="k">return</span> <span class="s2">&quot;Incorrect input, Try again.&quot;</span>
+</span><span id="Intelligence.set_difficulty-85"><a href="#Intelligence.set_difficulty-85"><span class="linenos">85</span></a>
+</span><span id="Intelligence.set_difficulty-86"><a href="#Intelligence.set_difficulty-86"><span class="linenos">86</span></a>        <span class="c1"># level = level.lower()</span>
+</span><span id="Intelligence.set_difficulty-87"><a href="#Intelligence.set_difficulty-87"><span class="linenos">87</span></a>        <span class="c1"># if level == &quot;easy&quot;:</span>
+</span><span id="Intelligence.set_difficulty-88"><a href="#Intelligence.set_difficulty-88"><span class="linenos">88</span></a>        <span class="c1">#     return self.easy()</span>
+</span><span id="Intelligence.set_difficulty-89"><a href="#Intelligence.set_difficulty-89"><span class="linenos">89</span></a>        <span class="c1"># elif level == &quot;medium&quot;:</span>
+</span><span id="Intelligence.set_difficulty-90"><a href="#Intelligence.set_difficulty-90"><span class="linenos">90</span></a>        <span class="c1">#     return self.medium()</span>
+</span><span id="Intelligence.set_difficulty-91"><a href="#Intelligence.set_difficulty-91"><span class="linenos">91</span></a>        <span class="c1"># elif level == &quot;hard&quot;:</span>
+</span><span id="Intelligence.set_difficulty-92"><a href="#Intelligence.set_difficulty-92"><span class="linenos">92</span></a>        <span class="c1">#     return self.hard()</span>
+</span><span id="Intelligence.set_difficulty-93"><a href="#Intelligence.set_difficulty-93"><span class="linenos">93</span></a>        <span class="c1"># else:</span>
+</span><span id="Intelligence.set_difficulty-94"><a href="#Intelligence.set_difficulty-94"><span class="linenos">94</span></a>        <span class="c1">#     return &#39;Incorrect input, Try again.&#39;</span>
 </span></pre></div>
 
 
@@ -616,13 +612,14 @@
 
     </div>
     <a class="headerlink" href="#Intelligence.make_choice"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Intelligence.make_choice-98"><a href="#Intelligence.make_choice-98"><span class="linenos"> 98</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">make_choice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">):</span>
-</span><span id="Intelligence.make_choice-99"><a href="#Intelligence.make_choice-99"><span class="linenos"> 99</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="s2">&quot;e&quot;</span><span class="p">:</span>
-</span><span id="Intelligence.make_choice-100"><a href="#Intelligence.make_choice-100"><span class="linenos">100</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">easy</span><span class="p">(</span><span class="n">temp_score</span><span class="p">)</span>
-</span><span id="Intelligence.make_choice-101"><a href="#Intelligence.make_choice-101"><span class="linenos">101</span></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="s2">&quot;m&quot;</span><span class="p">:</span>
-</span><span id="Intelligence.make_choice-102"><a href="#Intelligence.make_choice-102"><span class="linenos">102</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">medium</span><span class="p">(</span><span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">)</span>
-</span><span id="Intelligence.make_choice-103"><a href="#Intelligence.make_choice-103"><span class="linenos">103</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Intelligence.make_choice-104"><a href="#Intelligence.make_choice-104"><span class="linenos">104</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">hard</span><span class="p">(</span><span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Intelligence.make_choice-96"><a href="#Intelligence.make_choice-96"><span class="linenos"> 96</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">make_choice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">):</span>
+</span><span id="Intelligence.make_choice-97"><a href="#Intelligence.make_choice-97"><span class="linenos"> 97</span></a>
+</span><span id="Intelligence.make_choice-98"><a href="#Intelligence.make_choice-98"><span class="linenos"> 98</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="s2">&quot;easy&quot;</span><span class="p">:</span>
+</span><span id="Intelligence.make_choice-99"><a href="#Intelligence.make_choice-99"><span class="linenos"> 99</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">easy</span><span class="p">(</span><span class="n">temp_score</span><span class="p">)</span>
+</span><span id="Intelligence.make_choice-100"><a href="#Intelligence.make_choice-100"><span class="linenos">100</span></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="s2">&quot;medium&quot;</span><span class="p">:</span>
+</span><span id="Intelligence.make_choice-101"><a href="#Intelligence.make_choice-101"><span class="linenos">101</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">medium</span><span class="p">(</span><span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">)</span>
+</span><span id="Intelligence.make_choice-102"><a href="#Intelligence.make_choice-102"><span class="linenos">102</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Intelligence.make_choice-103"><a href="#Intelligence.make_choice-103"><span class="linenos">103</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">hard</span><span class="p">(</span><span class="n">temp_score</span><span class="p">,</span> <span class="n">player_score</span><span class="p">)</span>
 </span></pre></div>
 
 
