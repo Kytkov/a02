@@ -49,7 +49,8 @@ class Game:
                     "You have gained "
                     + str(self.score_collected_this_round)
                     + " in this turn.\n"
-                    + "CHOOSE:\nR: Roll another\nS: Stand and keep your score\nQ: Quit round\n"
+                    + "CHOOSE:\nR: Roll another\nS: Stand and keep your score\n"
+                    "Q: Quit round\n"
                 )
             if decision_after_roll_input.lower().strip() == "s":
                 self.current_player.add_score(
@@ -65,9 +66,6 @@ class Game:
             if decision_after_roll_input.lower().strip() == "q":
                 self.game_over = True
                 break
-                
-
-                
 
     def computer_turn(self):
         """Computer's turn to play."""
@@ -103,7 +101,7 @@ class Game:
 
     def has_won(self, score):
         """Check if game is won."""
-        return score >= 10
+        return score >= 100
 
     def set_difficulty(self):
         """Set current difficult for game."""
@@ -223,14 +221,15 @@ class Game:
                             self.is_running = False
                     except ValueError:
                         print("Please input valid number")
-            
+
             if MENU_INPUT == 2:
                 print(
-                    "Each player may roll the die as many times as they wish during their turn.\n" 
-                    "If a 1 is rolled, the player loses all points gained during that turn,\n" 
-                    "and control passes to the next player.\n" 
+                    "Each player may roll the die as many times"
+                    "as they wish during their turn.\n"
+                    "If a 1 is rolled, the player loses all points"
+                    "gained during that turn,\n"
+                    "and control passes to the next player.\n"
                     "A player may choose to hold, adding the accumulated turn"
                     " points to their total score.\n"
                     "The first player to reach 100 points wins the game.\n"
                 )
-                
