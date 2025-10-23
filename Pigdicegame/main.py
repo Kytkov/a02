@@ -1,11 +1,13 @@
 """Entry point for the Pig dice game application."""
 
-from .Game import Game
+from Game import Game
 
 
 def main() -> None:
     """Instantiate the game and start its main loop."""
-    Game.run()
+    g = Game()
+
+    g.run()
 
 
 if __name__ == "__main__":
