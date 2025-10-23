@@ -68,7 +68,8 @@ py Pigdicegame/main.py
 ```
 
 You will be presented with a text-based menu that allows you to:
-- Start a new game    
+- Start a new game
+- View rules 
 - Check high scores  
 - Quit or restart the game  
 
