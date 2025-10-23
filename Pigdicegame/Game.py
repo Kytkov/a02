@@ -32,13 +32,13 @@ class Game:
 
             if roll_input.lower().strip() == "r":
                 has_rolled = self.current_dice.roll()
-                print("You rolled " + str(has_rolled) + "!")
+                print("\nYou rolled " + str(has_rolled) + "!\n")
 
-            self.stats.record_roll(has_rolled)
+                self.stats.record_roll(has_rolled)
 
-            if self.is_round_over(has_rolled):
-                print("woops, you rolled a one and lost your turn!")
-                break
+                if self.is_round_over(has_rolled):
+                    print("woops, you rolled a one and lost your turn!")
+                    break
 
             self.score_collected_this_round += has_rolled
 
@@ -57,8 +57,9 @@ class Game:
                     print(
                         "\nEnd of round! You earned "
                         + str(self.score_collected_this_round)
-                        + " in this round. \tIn total you have " + str(self.current_player.get_score())
-                    )
+                        + " in this round. \tIn total you have " + str(self.current_player.get_score()) + "\n"
+                        )
+                    
                     self.stats.record_round(self.score_collected_this_round)
                     still_playing = False
 
@@ -72,7 +73,7 @@ class Game:
             has_rolled = self.current_dice.roll()
 
             if self.is_round_over(has_rolled):
-                print(opponent_final_message + "\nbut at last rolled a one and lost ")
+                print(opponent_final_message + "\nbut at last rolled a one and lost\n ")
                 break
 
             opponent_final_message += str(has_rolled) + ", "
@@ -84,12 +85,11 @@ class Game:
             
             should_stand = self.current_intelligence.make_choice(self.score_collected_this_round, 
                                                                  self.current_player.get_score())
-            print("sent away", self.score_collected_this_round, " and got ",
-                  should_stand)
+            
             if should_stand:
                 self.current_intelligence.add_score(self.score_collected_this_round)
                 print("Opponent collected " + str(self.score_collected_this_round)
-                      + "\t ..and has a total score of " + str(self.current_intelligence.get_score()))
+                      + "\t ..and has a total score of " + str(self.current_intelligence.get_score()) + "\n")
                 #return
                 break
         
@@ -107,19 +107,30 @@ class Game:
         """check if game is won"""
         return score >=100
     
-    def resetScores(self):
+    def set_difficulty(self):
+        difficulty_level = input(
+                    "Finally, enter difficult level:\nE = EASY\nM = MEDIUM\nH = HARD"
+                )
+        if difficulty_level.upper() not in [
+                    "E",
+                    "M",
+                    "H",
+                ]:  # assign level automatically
+                    difficulty_level = "E"
+        self.current_intelligence.set_difficulty(difficulty_level)
+    
+    def reset_scores(self):
         self.current_player.set_score(0)
         self.current_intelligence.set_score(0)
 
     def run(self):
         """Manage menu and handle both input and output"""
         MENU_OUTPUT = "Welcome to Pig Dice!\t\n1:New game"
-        MENU_OUTPUT_GAME = "Keep playing?\n1:New round\n2: View stats"
+        MENU_OUTPUT_GAME = "Keep playing?\n1: New round\n2: View stats\n3: Change difficulty\n4: Quit"
         MENU_INPUT: int
         MENU_INPUT_GAME: int
         DICE_SIDES: int
         PLAYER_NAME = ""
-        difficulty_level: str
 
         try:
             MENU_INPUT = int(input(MENU_OUTPUT))
@@ -153,26 +164,17 @@ class Game:
                     print("[!] Did not get valid number.\nSides for dice:\t6")
                     DICE_SIDES = 6
 
-                difficulty_level = input(
-                    "Finally, enter difficult level:\nE = EASY\nM = MEDIUM\nH = HARD"
-                )
-                if difficulty_level not in [
-                    "E",
-                    "M",
-                    "H",
-                ]:  # assign level automatically
-                    difficulty_level = "E"
+                self.set_difficulty()
 
                 # use objects
                 self.current_player = player.Player(PLAYER_NAME)
                 self.current_dice = dice.Dice(DICE_SIDES)
                 self.stats = stats.Statistics()
-                self.current_intelligence = intelligence.Intelligence()
 
-                self.current_intelligence.set_difficulty(difficulty_level)
         while self.is_running:
-                self.resetScores()
+                self.reset_scores()
                 game_over = False
+                print("\n* NEW ROUND *\n")
 
                 while not game_over:  # game loop
 
@@ -182,10 +184,10 @@ class Game:
                     self.score_collected_this_round = 0
 
                     if self.has_won(self.current_player.get_score()):
-                        print("player won")
+                        print("\n😁👑Player won!\n")
                         break
                     if self.has_won(self.current_intelligence.get_score()):
-                        print("opponent won!")
+                        print("\n🤖👑Opponent won!\n")
                         break
 
                     if (
@@ -203,11 +205,16 @@ class Game:
                 MENU_INPUT_GAME = int(input(MENU_OUTPUT_GAME))
 
                 if MENU_INPUT_GAME == 1:
-                    game_over=False
+                    continue
 
                 elif MENU_INPUT_GAME == 2:
-    
-                    print(self.stats.__str__())
+                    print("\n" + self.stats.__str__())
+                
+                elif MENU_INPUT_GAME == 3:
+                    self.set_difficulty()
+                
+                elif MENU_INPUT_GAME == 4:
+                     self.is_running = False
             
             
 

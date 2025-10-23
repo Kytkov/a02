@@ -60,7 +60,7 @@ class Intelligence:
         #if temp_score>=35 and (player_score-temp_score+player_score)>50:
         #    self.add_score(temp_score)
         #   return True
-        if temp_score>=5 and (player_score)-(self.score+temp_score)>=10:
+        if temp_score>=5 or (player_score)-(self.score+temp_score)>=10:
             return True
         
         else:
@@ -72,6 +72,7 @@ class Intelligence:
             return 'Incorrect input, Try again.'
 
         level = level.lower()
+
         if level == "e":
             self.difficulty = "easy"
         elif level == "m":
@@ -93,9 +94,10 @@ class Intelligence:
         #     return 'Incorrect input, Try again.'
 
     def make_choice(self, temp_score, player_score):
-        if self.difficulty == "e":
+    
+        if self.difficulty == "easy":
            return self.easy(temp_score)
-        elif self.difficulty == "m":
+        elif self.difficulty == "medium":
             return self.medium(temp_score, player_score)
         else:
             return self.hard(temp_score,player_score)
