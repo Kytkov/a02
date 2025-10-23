@@ -20,6 +20,7 @@ class Game:
         )  # in constructor?
         self.current_dice = dice.Dice(6)
         self.stats = stats.Statistics()
+        self.game_over = False
 
     def player_turn(self):
         """Player's turn to play."""
@@ -48,7 +49,7 @@ class Game:
                     "You have gained "
                     + str(self.score_collected_this_round)
                     + " in this turn.\n"
-                    + "CHOOSE:\nR: Roll another\nS: Stand and keep your score\n"
+                    + "CHOOSE:\nR: Roll another\nS: Stand and keep your score\nQ: Quit round\n"
                 )
             if decision_after_roll_input.lower().strip() == "s":
                 self.current_player.add_score(
@@ -61,6 +62,12 @@ class Game:
                       str(self.current_player.get_score()) + "\n"
                     )
                 break
+            if decision_after_roll_input.lower().strip() == "q":
+                self.game_over = True
+                break
+                
+
+                
 
     def computer_turn(self):
         """Computer's turn to play."""
@@ -96,7 +103,7 @@ class Game:
 
     def has_won(self, score):
         """Check if game is won."""
-        return score >= 100
+        return score >= 10
 
     def set_difficulty(self):
         """Set current difficult for game."""
@@ -119,7 +126,7 @@ class Game:
 
     def run(self):
         """Manage menu and handle both input and output."""
-        MENU_OUTPUT = "Welcome to Pig Dice!\t\n1:New game\n"
+        MENU_OUTPUT = "Welcome to Pig Dice!\t\n1:New game\n2:Rules\n"
         MENU_OUTPUT_GAME = (
             "\nKeep playing?\n"
             "1: New round\n"
@@ -128,90 +135,102 @@ class Game:
             "4: Quit\n"
         )
         MENU_INPUT: int
-        game_over = False
+        self.game_over = False
         DICE_SIDES: int
         PLAYER_NAME = ""
+        STILL_IN_MENU = True
 
-        game_over = False
+        while STILL_IN_MENU:
 
-        try:
-            MENU_INPUT = int(input(MENU_OUTPUT))
-
-        except ValueError:
-            has_recovered_from_err = False
-            for i in range(
-                len(MENU_INPUT)
-            ):  # potential spelling error with integers in the input..
-                # ..check for first integer.
-                try:
-                    int(i)
-                    has_recovered_from_err = True
-                    break
-                except ValueError:
-                    continue
-            if not has_recovered_from_err:
-                print("[!] Please chooce correct menu option")
-
-        if MENU_INPUT == 1:
-
-            while len(PLAYER_NAME) == 0:  # only assign name once
-                PLAYER_NAME = input("Enter your name: ")
-                if len(PLAYER_NAME) == 0:
-                    print(
-                        "[!] Your name needs to consist of atleast one character"
-                    )
-
-                self.set_difficulty()
-
-                DICE_SIDES = int(input("Enter amount of dice sides: "))
-
-                # use objects
-                self.current_player = player.Player(PLAYER_NAME)
-                self.current_dice = dice.Dice(DICE_SIDES)
-                self.stats = stats.Statistics()
-
-        while self.is_running:
-            self.reset_scores()
-
-            while not game_over:  # game loop
-                self.score_collected_this_round = 0
-
-                # the variabels below are general for both player and opponent.
-                # After every round, they are assigned those default values
-
-                if self.player_has_current_hand:
-                    self.player_turn()
-                else:
-                    self.computer_turn()
-
-                if self.has_won(self.current_player.get_score()):
-                    print("\n😁👑Player won!\n")
-                    self.stats.record_round(self.current_player.get_score())
-                    break
-                if self.has_won(self.current_intelligence.get_score()):
-                    print("\n🤖👑Opponent won!\n")
-                    self.stats.record_round(self.current_player.get_score())
-                    break
-
-                self.player_has_current_hand = (
-                    not self.player_has_current_hand
-                )  # change turn
-
-            game_over = True
             try:
-                MENU_INPUT_GAME = int(input(MENU_OUTPUT_GAME))
+                MENU_INPUT = int(input(MENU_OUTPUT))
 
-                if MENU_INPUT_GAME == 1:
-                    print("\n* NEW ROUND *\n")
-                    game_over = False
+            except ValueError:
+                has_recovered_from_err = False
+                for i in range(
+                    len(MENU_INPUT)
+                ):  # potential spelling error with integers in the input..
+                    # ..check for first integer.
+                    try:
+                        int(i)
+                        has_recovered_from_err = True
+                        break
+                    except ValueError:
+                        continue
+                if not has_recovered_from_err:
+                    print("[!] Please chooce correct menu option")
 
-                elif MENU_INPUT_GAME == 2:
-                    print("\n" + self.stats.__str__())
+            if MENU_INPUT == 1:
 
-                elif MENU_INPUT_GAME == 3:
+                while len(PLAYER_NAME) == 0:  # only assign name once
+                    PLAYER_NAME = input("Enter your name: ")
+                    if len(PLAYER_NAME) == 0:
+                        print(
+                            "[!] Your name needs to consist of atleast one character"
+                        )
+
                     self.set_difficulty()
 
-                elif MENU_INPUT_GAME == 4:
-                    self.is_running = False
-            except ValueError:
-                print("Please input valid number")
+                    DICE_SIDES = int(input("Enter amount of dice sides: "))
+
+                    # use objects
+                    self.current_player = player.Player(PLAYER_NAME)
+                    self.current_dice = dice.Dice(DICE_SIDES)
+                    self.stats = stats.Statistics()
+
+                while self.is_running:
+                    self.reset_scores()
+
+                    while not self.game_over:  # game loop
+                        self.score_collected_this_round = 0
+
+                        # the variabels below are general for both player and opponent.
+                        # After every round, they are assigned those default values
+
+                        if self.player_has_current_hand:
+                            self.player_turn()
+                        else:
+                            self.computer_turn()
+
+                        if self.has_won(self.current_player.get_score()):
+                            print("\n😁👑Player won!\n")
+                            self.stats.record_round(self.current_player.get_score())
+                            break
+                        if self.has_won(self.current_intelligence.get_score()):
+                            print("\n🤖👑Opponent won!\n")
+                            self.stats.record_round(self.current_player.get_score())
+                            break
+
+                        self.player_has_current_hand = (
+                            not self.player_has_current_hand
+                        )  # change turn
+
+                    self.game_over = True
+                    try:
+                        MENU_INPUT_GAME = int(input(MENU_OUTPUT_GAME))
+
+                        if MENU_INPUT_GAME == 1:
+                            print("\n* NEW ROUND *\n")
+                            self.game_over = False
+
+                        elif MENU_INPUT_GAME == 2:
+                            print("\n" + self.stats.__str__())
+
+                        elif MENU_INPUT_GAME == 3:
+                            self.set_difficulty()
+
+                        elif MENU_INPUT_GAME == 4:
+                            self.is_running = False
+                    except ValueError:
+                        print("Please input valid number")
+            
+            if MENU_INPUT == 2:
+                print(
+                    "Each player may roll the die as many times as they wish during their turn." 
+                    "If a 1 is rolled, the player loses all points gained during that turn, " 
+                    "and control passes to the next player. " 
+                    "A player may choose to hold, adding the accumulated turn"
+                    " points to their total score. "
+                    "The first player to reach 100 points wins the game.\n"
+                )
+                
