@@ -11,7 +11,7 @@ class Intelligence:
         if not isinstance(score, int):
             raise ValueError("Score must be an integer")
         self.score = score
-
+    
     def add_score(self, score):
         """Add computer's score."""
         if not isinstance(score, int):

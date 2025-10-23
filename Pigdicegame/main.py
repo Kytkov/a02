@@ -1,13 +1,11 @@
-# pylint: disable=C0103
 """Entry point for the Pig dice game application."""
 
-import Game as Game
+from .Game import Game
 
 
 def main() -> None:
     """Instantiate the game and start its main loop."""
-    g = Game.Game()
-    g.run()
+    Game.run()
 
 
 if __name__ == "__main__":

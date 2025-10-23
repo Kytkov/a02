@@ -1,5 +1,6 @@
 """Player class intended for the dice game."""
 
+
 class Player:
     """
     Represents a player in the dice game.
