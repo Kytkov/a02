@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="pdoc 14.7.0"/>
-    <title>Pigdicegame.Highscore API documentation</title>
+    <title>Pigdicegame.TestGame API documentation</title>
 
     <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
     <style>/*! syntax-highlighting.css */pre{line-height:125%;}span.linenos{color:inherit; background-color:transparent; padding-left:5px; padding-right:20px;}.pdoc-code .hll{background-color:#ffffcc}.pdoc-code{background:#f8f8f8;}.pdoc-code .c{color:#3D7B7B; font-style:italic}.pdoc-code .err{border:1px solid #FF0000}.pdoc-code .k{color:#008000; font-weight:bold}.pdoc-code .o{color:#666666}.pdoc-code .ch{color:#3D7B7B; font-style:italic}.pdoc-code .cm{color:#3D7B7B; font-style:italic}.pdoc-code .cp{color:#9C6500}.pdoc-code .cpf{color:#3D7B7B; font-style:italic}.pdoc-code .c1{color:#3D7B7B; font-style:italic}.pdoc-code .cs{color:#3D7B7B; font-style:italic}.pdoc-code .gd{color:#A00000}.pdoc-code .ge{font-style:italic}.pdoc-code .gr{color:#E40000}.pdoc-code .gh{color:#000080; font-weight:bold}.pdoc-code .gi{color:#008400}.pdoc-code .go{color:#717171}.pdoc-code .gp{color:#000080; font-weight:bold}.pdoc-code .gs{font-weight:bold}.pdoc-code .gu{color:#800080; font-weight:bold}.pdoc-code .gt{color:#0044DD}.pdoc-code .kc{color:#008000; font-weight:bold}.pdoc-code .kd{color:#008000; font-weight:bold}.pdoc-code .kn{color:#008000; font-weight:bold}.pdoc-code .kp{color:#008000}.pdoc-code .kr{color:#008000; font-weight:bold}.pdoc-code .kt{color:#B00040}.pdoc-code .m{color:#666666}.pdoc-code .s{color:#BA2121}.pdoc-code .na{color:#687822}.pdoc-code .nb{color:#008000}.pdoc-code .nc{color:#0000FF; font-weight:bold}.pdoc-code .no{color:#880000}.pdoc-code .nd{color:#AA22FF}.pdoc-code .ni{color:#717171; font-weight:bold}.pdoc-code .ne{color:#CB3F38; font-weight:bold}.pdoc-code .nf{color:#0000FF}.pdoc-code .nl{color:#767600}.pdoc-code .nn{color:#0000FF; font-weight:bold}.pdoc-code .nt{color:#008000; font-weight:bold}.pdoc-code .nv{color:#19177C}.pdoc-code .ow{color:#AA22FF; font-weight:bold}.pdoc-code .w{color:#bbbbbb}.pdoc-code .mb{color:#666666}.pdoc-code .mf{color:#666666}.pdoc-code .mh{color:#666666}.pdoc-code .mi{color:#666666}.pdoc-code .mo{color:#666666}.pdoc-code .sa{color:#BA2121}.pdoc-code .sb{color:#BA2121}.pdoc-code .sc{color:#BA2121}.pdoc-code .dl{color:#BA2121}.pdoc-code .sd{color:#BA2121; font-style:italic}.pdoc-code .s2{color:#BA2121}.pdoc-code .se{color:#AA5D1F; font-weight:bold}.pdoc-code .sh{color:#BA2121}.pdoc-code .si{color:#A45A77; font-weight:bold}.pdoc-code .sx{color:#008000}.pdoc-code .sr{color:#A45A77}.pdoc-code .s1{color:#BA2121}.pdoc-code .ss{color:#19177C}.pdoc-code .bp{color:#008000}.pdoc-code .fm{color:#0000FF}.pdoc-code .vc{color:#19177C}.pdoc-code .vg{color:#19177C}.pdoc-code .vi{color:#19177C}.pdoc-code .vm{color:#19177C}.pdoc-code .il{color:#666666}</style>
@@ -31,22 +31,13 @@
             <h2>API Documentation</h2>
                 <ul class="memberlist">
             <li>
-                    <a class="class" href="#HighScore">HighScore</a>
+                    <a class="class" href="#TestGame">TestGame</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="variable" href="#HighScore.amountOfTimesPlayed">amountOfTimesPlayed</a>
+                                <a class="function" href="#TestGame.setUp">setUp</a>
                         </li>
                         <li>
-                                <a class="variable" href="#HighScore.highScore">highScore</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#HighScore.checkScore">checkScore</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#HighScore.getHighScore">getHighScore</a>
-                        </li>
-                        <li>
-                                <a class="function" href="#HighScore.getTimesPlayed">getTimesPlayed</a>
+                                <a class="function" href="#TestGame.test_objects">test_objects</a>
                         </li>
                 </ul>
 
@@ -65,164 +56,205 @@
     <main class="pdoc">
             <section class="module-info">
                     <h1 class="modulename">
-<a href="./../Pigdicegame.html">Pigdicegame</a><wbr>.Highscore    </h1>
+<a href="./../Pigdicegame.html">Pigdicegame</a><wbr>.TestGame    </h1>
 
-                
-                        <input id="mod-Highscore-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                        <div class="docstring"><p>necessary imports for unittesting.</p>
+</div>
 
-                        <label class="view-source-button" for="mod-Highscore-view-source"><span>View Source</span></label>
+                        <input id="mod-TestGame-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="k">class</span><span class="w"> </span><span class="nc">HighScore</span><span class="p">:</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Store player&#39;s highscore by score and times played.&quot;&quot;&quot;</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a>
-</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">amountOfTimesPlayed</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">highScore</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>
-</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">checkScore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
-</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if received score is greater than highscore.&quot;&quot;&quot;</span>
-</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">amountOfTimesPlayed</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>        <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">highScore</span><span class="p">:</span>
-</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">highScore</span> <span class="o">=</span> <span class="n">score</span>
-</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>
-</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getHighScore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Return player&#39;s highscore.&quot;&quot;&quot;</span>
-</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">highScore</span>
-</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>
-</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTimesPlayed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Return player&#39;s number of times played.&quot;&quot;&quot;</span>
-</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">amountOfTimesPlayed</span>
+                        <label class="view-source-button" for="mod-TestGame-view-source"><span>View Source</span></label>
+
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="sd">&quot;&quot;&quot;necessary imports for unittesting.&quot;&quot;&quot;</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">Game</span><span class="w"> </span><span class="kn">import</span> <span class="n">Game</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">dice</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dice</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">Intelligence</span><span class="w"> </span><span class="kn">import</span> <span class="n">Intelligence</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">player</span><span class="w"> </span><span class="kn">import</span> <span class="n">Player</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="k">class</span><span class="w"> </span><span class="nc">TestGame</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">game</span> <span class="o">=</span> <span class="n">Game</span><span class="p">()</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_objects</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">current_dice</span><span class="p">,</span> <span class="n">Dice</span><span class="p">)</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">current_intelligence</span><span class="p">,</span> <span class="n">Intelligence</span><span class="p">)</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">current_player</span><span class="p">,</span> <span class="n">Player</span><span class="p">)</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </span></pre></div>
 
 
             </section>
-                <section id="HighScore">
-                            <input id="HighScore-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                <section id="TestGame">
+                            <input id="TestGame-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">HighScore</span>:
+    <span class="name">TestGame</span><wbr>(<span class="base">unittest.case.TestCase</span>):
 
-                <label class="view-source-button" for="HighScore-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="TestGame-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#HighScore"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="HighScore-2"><a href="#HighScore-2"><span class="linenos"> 2</span></a><span class="k">class</span><span class="w"> </span><span class="nc">HighScore</span><span class="p">:</span>
-</span><span id="HighScore-3"><a href="#HighScore-3"><span class="linenos"> 3</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Store player&#39;s highscore by score and times played.&quot;&quot;&quot;</span>
-</span><span id="HighScore-4"><a href="#HighScore-4"><span class="linenos"> 4</span></a>
-</span><span id="HighScore-5"><a href="#HighScore-5"><span class="linenos"> 5</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="HighScore-6"><a href="#HighScore-6"><span class="linenos"> 6</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">amountOfTimesPlayed</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="HighScore-7"><a href="#HighScore-7"><span class="linenos"> 7</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">highScore</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="HighScore-8"><a href="#HighScore-8"><span class="linenos"> 8</span></a>
-</span><span id="HighScore-9"><a href="#HighScore-9"><span class="linenos"> 9</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">checkScore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
-</span><span id="HighScore-10"><a href="#HighScore-10"><span class="linenos">10</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if received score is greater than highscore.&quot;&quot;&quot;</span>
-</span><span id="HighScore-11"><a href="#HighScore-11"><span class="linenos">11</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">amountOfTimesPlayed</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="HighScore-12"><a href="#HighScore-12"><span class="linenos">12</span></a>        <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">highScore</span><span class="p">:</span>
-</span><span id="HighScore-13"><a href="#HighScore-13"><span class="linenos">13</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">highScore</span> <span class="o">=</span> <span class="n">score</span>
-</span><span id="HighScore-14"><a href="#HighScore-14"><span class="linenos">14</span></a>
-</span><span id="HighScore-15"><a href="#HighScore-15"><span class="linenos">15</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getHighScore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="HighScore-16"><a href="#HighScore-16"><span class="linenos">16</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Return player&#39;s highscore.&quot;&quot;&quot;</span>
-</span><span id="HighScore-17"><a href="#HighScore-17"><span class="linenos">17</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">highScore</span>
-</span><span id="HighScore-18"><a href="#HighScore-18"><span class="linenos">18</span></a>
-</span><span id="HighScore-19"><a href="#HighScore-19"><span class="linenos">19</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTimesPlayed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="HighScore-20"><a href="#HighScore-20"><span class="linenos">20</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Return player&#39;s number of times played.&quot;&quot;&quot;</span>
-</span><span id="HighScore-21"><a href="#HighScore-21"><span class="linenos">21</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">amountOfTimesPlayed</span>
+    <a class="headerlink" href="#TestGame"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TestGame-11"><a href="#TestGame-11"><span class="linenos">11</span></a><span class="k">class</span><span class="w"> </span><span class="nc">TestGame</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+</span><span id="TestGame-12"><a href="#TestGame-12"><span class="linenos">12</span></a>
+</span><span id="TestGame-13"><a href="#TestGame-13"><span class="linenos">13</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="TestGame-14"><a href="#TestGame-14"><span class="linenos">14</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">game</span> <span class="o">=</span> <span class="n">Game</span><span class="p">()</span>
+</span><span id="TestGame-15"><a href="#TestGame-15"><span class="linenos">15</span></a>
+</span><span id="TestGame-16"><a href="#TestGame-16"><span class="linenos">16</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_objects</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="TestGame-17"><a href="#TestGame-17"><span class="linenos">17</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">current_dice</span><span class="p">,</span> <span class="n">Dice</span><span class="p">)</span>
+</span><span id="TestGame-18"><a href="#TestGame-18"><span class="linenos">18</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">current_intelligence</span><span class="p">,</span> <span class="n">Intelligence</span><span class="p">)</span>
+</span><span id="TestGame-19"><a href="#TestGame-19"><span class="linenos">19</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">current_player</span><span class="p">,</span> <span class="n">Player</span><span class="p">)</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Store player's highscore by score and times played.</p>
+            <div class="docstring"><p>A class whose instances are single test cases.</p>
+
+<p>By default, the test code itself should be placed in a method named
+'runTest'.</p>
+
+<p>If the fixture may be used for many test cases, create as
+many test methods as are needed. When instantiating such a TestCase
+subclass, specify in the constructor arguments the name of the test method
+that the instance is to execute.</p>
+
+<p>Test authors should subclass TestCase for their own tests. Construction
+and deconstruction of the test's environment ('fixture') can be
+implemented by overriding the 'setUp' and 'tearDown' methods respectively.</p>
+
+<p>If it is necessary to override the __init__ method, the base class
+__init__ method must always be called. It is important that subclasses
+should not change the signature of their __init__ method, since instances
+of the classes are instantiated automatically by parts of the framework
+in order to be run.</p>
+
+<p>When subclassing TestCase, you can set these attributes:</p>
+
+<ul>
+<li>failureException: determines which exception will be raised when
+the instance's assertion methods fail; test methods raising this
+exception will be deemed to have 'failed' rather than 'errored'.</li>
+<li>longMessage: determines whether long messages (including repr of
+objects used in assert methods) will be printed on failure in <em>addition</em>
+to any explicit message passed.</li>
+<li>maxDiff: sets the maximum length of a diff in failure messages
+by assert methods using difflib. It is looked up as an instance
+attribute so can be configured by individual tests if required.</li>
+</ul>
 </div>
 
 
-                            <div id="HighScore.amountOfTimesPlayed" class="classattr">
-                                <div class="attr variable">
-            <span class="name">amountOfTimesPlayed</span>
-
-        
-    </div>
-    <a class="headerlink" href="#HighScore.amountOfTimesPlayed"></a>
-    
-    
-
-                            </div>
-                            <div id="HighScore.highScore" class="classattr">
-                                <div class="attr variable">
-            <span class="name">highScore</span>
-
-        
-    </div>
-    <a class="headerlink" href="#HighScore.highScore"></a>
-    
-    
-
-                            </div>
-                            <div id="HighScore.checkScore" class="classattr">
-                                        <input id="HighScore.checkScore-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="TestGame.setUp" class="classattr">
+                                        <input id="TestGame.setUp-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">checkScore</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">score</span></span><span class="return-annotation">):</span></span>
+        <span class="name">setUp</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">):</span></span>
 
-                <label class="view-source-button" for="HighScore.checkScore-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="TestGame.setUp-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#HighScore.checkScore"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="HighScore.checkScore-9"><a href="#HighScore.checkScore-9"><span class="linenos"> 9</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">checkScore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
-</span><span id="HighScore.checkScore-10"><a href="#HighScore.checkScore-10"><span class="linenos">10</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if received score is greater than highscore.&quot;&quot;&quot;</span>
-</span><span id="HighScore.checkScore-11"><a href="#HighScore.checkScore-11"><span class="linenos">11</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">amountOfTimesPlayed</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="HighScore.checkScore-12"><a href="#HighScore.checkScore-12"><span class="linenos">12</span></a>        <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">highScore</span><span class="p">:</span>
-</span><span id="HighScore.checkScore-13"><a href="#HighScore.checkScore-13"><span class="linenos">13</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">highScore</span> <span class="o">=</span> <span class="n">score</span>
+    <a class="headerlink" href="#TestGame.setUp"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TestGame.setUp-13"><a href="#TestGame.setUp-13"><span class="linenos">13</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="TestGame.setUp-14"><a href="#TestGame.setUp-14"><span class="linenos">14</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">game</span> <span class="o">=</span> <span class="n">Game</span><span class="p">()</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Check if received score is greater than highscore.</p>
+            <div class="docstring"><p>Hook method for setting up the test fixture before exercising it.</p>
 </div>
 
 
                             </div>
-                            <div id="HighScore.getHighScore" class="classattr">
-                                        <input id="HighScore.getHighScore-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="TestGame.test_objects" class="classattr">
+                                        <input id="TestGame.test_objects-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">getHighScore</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">):</span></span>
+        <span class="name">test_objects</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">):</span></span>
 
-                <label class="view-source-button" for="HighScore.getHighScore-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="TestGame.test_objects-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#HighScore.getHighScore"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="HighScore.getHighScore-15"><a href="#HighScore.getHighScore-15"><span class="linenos">15</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getHighScore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="HighScore.getHighScore-16"><a href="#HighScore.getHighScore-16"><span class="linenos">16</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Return player&#39;s highscore.&quot;&quot;&quot;</span>
-</span><span id="HighScore.getHighScore-17"><a href="#HighScore.getHighScore-17"><span class="linenos">17</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">highScore</span>
+    <a class="headerlink" href="#TestGame.test_objects"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TestGame.test_objects-16"><a href="#TestGame.test_objects-16"><span class="linenos">16</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_objects</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="TestGame.test_objects-17"><a href="#TestGame.test_objects-17"><span class="linenos">17</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">current_dice</span><span class="p">,</span> <span class="n">Dice</span><span class="p">)</span>
+</span><span id="TestGame.test_objects-18"><a href="#TestGame.test_objects-18"><span class="linenos">18</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">current_intelligence</span><span class="p">,</span> <span class="n">Intelligence</span><span class="p">)</span>
+</span><span id="TestGame.test_objects-19"><a href="#TestGame.test_objects-19"><span class="linenos">19</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">game</span><span class="o">.</span><span class="n">current_player</span><span class="p">,</span> <span class="n">Player</span><span class="p">)</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Return player's highscore.</p>
-</div>
-
+    
 
                             </div>
-                            <div id="HighScore.getTimesPlayed" class="classattr">
-                                        <input id="HighScore.getTimesPlayed-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-<div class="attr function">
-            
-        <span class="def">def</span>
-        <span class="name">getTimesPlayed</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">):</span></span>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>unittest.case.TestCase</dt>
+                                <dd id="TestGame.__init__" class="function">TestCase</dd>
+                <dd id="TestGame.failureException" class="variable">failureException</dd>
+                <dd id="TestGame.longMessage" class="variable">longMessage</dd>
+                <dd id="TestGame.maxDiff" class="variable">maxDiff</dd>
+                <dd id="TestGame.addTypeEqualityFunc" class="function">addTypeEqualityFunc</dd>
+                <dd id="TestGame.addCleanup" class="function">addCleanup</dd>
+                <dd id="TestGame.enterContext" class="function">enterContext</dd>
+                <dd id="TestGame.addClassCleanup" class="function">addClassCleanup</dd>
+                <dd id="TestGame.enterClassContext" class="function">enterClassContext</dd>
+                <dd id="TestGame.tearDown" class="function">tearDown</dd>
+                <dd id="TestGame.setUpClass" class="function">setUpClass</dd>
+                <dd id="TestGame.tearDownClass" class="function">tearDownClass</dd>
+                <dd id="TestGame.countTestCases" class="function">countTestCases</dd>
+                <dd id="TestGame.defaultTestResult" class="function">defaultTestResult</dd>
+                <dd id="TestGame.shortDescription" class="function">shortDescription</dd>
+                <dd id="TestGame.id" class="function">id</dd>
+                <dd id="TestGame.subTest" class="function">subTest</dd>
+                <dd id="TestGame.run" class="function">run</dd>
+                <dd id="TestGame.doCleanups" class="function">doCleanups</dd>
+                <dd id="TestGame.doClassCleanups" class="function">doClassCleanups</dd>
+                <dd id="TestGame.debug" class="function">debug</dd>
+                <dd id="TestGame.skipTest" class="function">skipTest</dd>
+                <dd id="TestGame.fail" class="function">fail</dd>
+                <dd id="TestGame.assertFalse" class="function">assertFalse</dd>
+                <dd id="TestGame.assertTrue" class="function">assertTrue</dd>
+                <dd id="TestGame.assertRaises" class="function">assertRaises</dd>
+                <dd id="TestGame.assertWarns" class="function">assertWarns</dd>
+                <dd id="TestGame.assertLogs" class="function">assertLogs</dd>
+                <dd id="TestGame.assertNoLogs" class="function">assertNoLogs</dd>
+                <dd id="TestGame.assertEqual" class="function">assertEqual</dd>
+                <dd id="TestGame.assertNotEqual" class="function">assertNotEqual</dd>
+                <dd id="TestGame.assertAlmostEqual" class="function">assertAlmostEqual</dd>
+                <dd id="TestGame.assertNotAlmostEqual" class="function">assertNotAlmostEqual</dd>
+                <dd id="TestGame.assertSequenceEqual" class="function">assertSequenceEqual</dd>
+                <dd id="TestGame.assertListEqual" class="function">assertListEqual</dd>
+                <dd id="TestGame.assertTupleEqual" class="function">assertTupleEqual</dd>
+                <dd id="TestGame.assertSetEqual" class="function">assertSetEqual</dd>
+                <dd id="TestGame.assertIn" class="function">assertIn</dd>
+                <dd id="TestGame.assertNotIn" class="function">assertNotIn</dd>
+                <dd id="TestGame.assertIs" class="function">assertIs</dd>
+                <dd id="TestGame.assertIsNot" class="function">assertIsNot</dd>
+                <dd id="TestGame.assertDictEqual" class="function">assertDictEqual</dd>
+                <dd id="TestGame.assertCountEqual" class="function">assertCountEqual</dd>
+                <dd id="TestGame.assertMultiLineEqual" class="function">assertMultiLineEqual</dd>
+                <dd id="TestGame.assertLess" class="function">assertLess</dd>
+                <dd id="TestGame.assertLessEqual" class="function">assertLessEqual</dd>
+                <dd id="TestGame.assertGreater" class="function">assertGreater</dd>
+                <dd id="TestGame.assertGreaterEqual" class="function">assertGreaterEqual</dd>
+                <dd id="TestGame.assertIsNone" class="function">assertIsNone</dd>
+                <dd id="TestGame.assertIsNotNone" class="function">assertIsNotNone</dd>
+                <dd id="TestGame.assertIsInstance" class="function">assertIsInstance</dd>
+                <dd id="TestGame.assertNotIsInstance" class="function">assertNotIsInstance</dd>
+                <dd id="TestGame.assertRaisesRegex" class="function">assertRaisesRegex</dd>
+                <dd id="TestGame.assertWarnsRegex" class="function">assertWarnsRegex</dd>
+                <dd id="TestGame.assertRegex" class="function">assertRegex</dd>
+                <dd id="TestGame.assertNotRegex" class="function">assertNotRegex</dd>
 
-                <label class="view-source-button" for="HighScore.getTimesPlayed-view-source"><span>View Source</span></label>
-
-    </div>
-    <a class="headerlink" href="#HighScore.getTimesPlayed"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="HighScore.getTimesPlayed-19"><a href="#HighScore.getTimesPlayed-19"><span class="linenos">19</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getTimesPlayed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="HighScore.getTimesPlayed-20"><a href="#HighScore.getTimesPlayed-20"><span class="linenos">20</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Return player&#39;s number of times played.&quot;&quot;&quot;</span>
-</span><span id="HighScore.getTimesPlayed-21"><a href="#HighScore.getTimesPlayed-21"><span class="linenos">21</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">amountOfTimesPlayed</span>
-</span></pre></div>
-
-
-            <div class="docstring"><p>Return player's number of times played.</p>
-</div>
-
-
+            </div>
+                                </dl>
                             </div>
                 </section>
     </main>

@@ -1,4 +1,16 @@
-﻿[tool.pdoc]
-modules = ['Pigdicegame']
-output_directory = 'doc/api'
-docformat = 'google'
+﻿[tool.black]
+line-length = 88
+target-version = ["py311"]
+include = '\.pyi?$'
+exclude = '''
+/(
+  \.git
+  | \.venv
+  | build
+  | dist
+  | htmlcov
+  | __pycache__
+  | \.mypy_cache
+  | \.pytest_cache
+)/
+'''

@@ -1,5 +1,5 @@
 import unittest
-from player import player
+from Pigdicegame.player import Player
 
 
 class TestPlayer(unittest.TestCase):
