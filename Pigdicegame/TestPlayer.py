@@ -3,8 +3,8 @@ from player import Player
 
 
 class TestPlayer(unittest.TestCase):
-    
     """Unit tests for the player class.
+
     This test suite verifies the correct behavior of player methods
     including setting and getting names and scores, as well as handling
     invalid input types.
