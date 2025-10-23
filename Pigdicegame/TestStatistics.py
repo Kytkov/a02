@@ -67,8 +67,9 @@ class TestStatistics(unittest.TestCase):
         self.stats.record_round(10)
         self.stats.record_round(5)
         self.stats.record_round(15)
-        self.assertAlmostEqual(self.stats.average_score_per_round(),
-                               10.0, places=6)
+        self.assertAlmostEqual(
+            self.stats.average_score_per_round(), 10.0, places=6
+        )
 
     def test_reset_restores_initial_state(self):
         """reset() should restore all fields to their initial values."""
@@ -93,7 +94,7 @@ class TestStatistics(unittest.TestCase):
 
         fields in the output string.
         """
-        self.stats.record_roll(1)   # total_rolls=1, total_ones=1
+        self.stats.record_roll(1)  # total_rolls=1, total_ones=1
         self.stats.record_round(9)  # total_rounds=1, total_points=9, highest=9
         s = str(self.stats)
         self.assertIn("Total Rolls: 1", s)

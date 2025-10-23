@@ -16,11 +16,13 @@
     <nav class="pdoc">
         <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
         <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
-        <div>            <a class="pdoc-button module-list-button" href="../Pigdicegame.html">
+        <div>            <a class="pdoc-button module-list-button" href="../index.html">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
   <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
-</svg>                &nbsp;Pigdicegame</a>
+</svg>                &nbsp;
+                Module Index
+            </a>
 
 
             <input type="search" placeholder="Search..." role="searchbox" aria-label="search"
@@ -31,31 +33,31 @@
             <h2>API Documentation</h2>
                 <ul class="memberlist">
             <li>
-                    <a class="class" href="#player">player</a>
+                    <a class="class" href="#Player">Player</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#player.__init__">player</a>
+                                <a class="function" href="#Player.__init__">Player</a>
                         </li>
                         <li>
-                                <a class="variable" href="#player.name">name</a>
+                                <a class="variable" href="#Player.name">name</a>
                         </li>
                         <li>
-                                <a class="variable" href="#player.score">score</a>
+                                <a class="variable" href="#Player.score">score</a>
                         </li>
                         <li>
-                                <a class="function" href="#player.set_score">set_score</a>
+                                <a class="function" href="#Player.set_score">set_score</a>
                         </li>
                         <li>
-                                <a class="function" href="#player.add_score">add_score</a>
+                                <a class="function" href="#Player.add_score">add_score</a>
                         </li>
                         <li>
-                                <a class="function" href="#player.get_score">get_score</a>
+                                <a class="function" href="#Player.get_score">get_score</a>
                         </li>
                         <li>
-                                <a class="function" href="#player.set_name">set_name</a>
+                                <a class="function" href="#Player.set_name">set_name</a>
                         </li>
                         <li>
-                                <a class="function" href="#player.get_name">get_name</a>
+                                <a class="function" href="#Player.get_name">get_name</a>
                         </li>
                 </ul>
 
@@ -74,227 +76,236 @@
     <main class="pdoc">
             <section class="module-info">
                     <h1 class="modulename">
-<a href="./../Pigdicegame.html">Pigdicegame</a><wbr>.player    </h1>
+Pigdicegame<wbr>.player    </h1>
 
-                
+                        <div class="docstring"><p>player class intended for the dice game</p>
+</div>
+
                         <input id="mod-player-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 
                         <label class="view-source-button" for="mod-player-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="k">class</span><span class="w"> </span><span class="nc">player</span><span class="p">:</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a>
-</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name must be a string&quot;</span><span class="p">)</span>
-</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>
-</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
-</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
-</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Score must be an integer&quot;</span><span class="p">)</span>
-</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
-</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>
-</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">add_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
-</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
-</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Score must be an integer&quot;</span><span class="p">)</span>
-</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">score</span>
-</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>
-</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_score</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="sd">&quot;&quot;&quot;player class intended for the dice game&quot;&quot;&quot;</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="k">class</span><span class="w"> </span><span class="nc">Player</span><span class="p">:</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;player class intended for the dice game&quot;&quot;&quot;</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name must be a string&quot;</span><span class="p">)</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Score must be an integer&quot;</span><span class="p">)</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">add_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Score must be an integer&quot;</span><span class="p">)</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">score</span>
 </span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>
-</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name must be a string&quot;</span><span class="p">)</span>
-</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a>
-</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_score</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name must be a string&quot;</span><span class="p">)</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a>
+</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
 </span></pre></div>
 
 
             </section>
-                <section id="player">
-                            <input id="player-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                <section id="Player">
+                            <input id="Player-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">player</span>:
+    <span class="name">Player</span>:
 
-                <label class="view-source-button" for="player-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Player-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#player"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="player-2"><a href="#player-2"><span class="linenos"> 2</span></a><span class="k">class</span><span class="w"> </span><span class="nc">player</span><span class="p">:</span>
-</span><span id="player-3"><a href="#player-3"><span class="linenos"> 3</span></a>
-</span><span id="player-4"><a href="#player-4"><span class="linenos"> 4</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-</span><span id="player-5"><a href="#player-5"><span class="linenos"> 5</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="player-6"><a href="#player-6"><span class="linenos"> 6</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name must be a string&quot;</span><span class="p">)</span>
-</span><span id="player-7"><a href="#player-7"><span class="linenos"> 7</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-</span><span id="player-8"><a href="#player-8"><span class="linenos"> 8</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="player-9"><a href="#player-9"><span class="linenos"> 9</span></a>
-</span><span id="player-10"><a href="#player-10"><span class="linenos">10</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
-</span><span id="player-11"><a href="#player-11"><span class="linenos">11</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
-</span><span id="player-12"><a href="#player-12"><span class="linenos">12</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Score must be an integer&quot;</span><span class="p">)</span>
-</span><span id="player-13"><a href="#player-13"><span class="linenos">13</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
-</span><span id="player-14"><a href="#player-14"><span class="linenos">14</span></a>
-</span><span id="player-15"><a href="#player-15"><span class="linenos">15</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">add_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
-</span><span id="player-16"><a href="#player-16"><span class="linenos">16</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
-</span><span id="player-17"><a href="#player-17"><span class="linenos">17</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Score must be an integer&quot;</span><span class="p">)</span>
-</span><span id="player-18"><a href="#player-18"><span class="linenos">18</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">score</span>
-</span><span id="player-19"><a href="#player-19"><span class="linenos">19</span></a>
-</span><span id="player-20"><a href="#player-20"><span class="linenos">20</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_score</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="player-21"><a href="#player-21"><span class="linenos">21</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span>
-</span><span id="player-22"><a href="#player-22"><span class="linenos">22</span></a>
-</span><span id="player-23"><a href="#player-23"><span class="linenos">23</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-</span><span id="player-24"><a href="#player-24"><span class="linenos">24</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="player-25"><a href="#player-25"><span class="linenos">25</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name must be a string&quot;</span><span class="p">)</span>
-</span><span id="player-26"><a href="#player-26"><span class="linenos">26</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-</span><span id="player-27"><a href="#player-27"><span class="linenos">27</span></a>
-</span><span id="player-28"><a href="#player-28"><span class="linenos">28</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="player-29"><a href="#player-29"><span class="linenos">29</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+    <a class="headerlink" href="#Player"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Player-3"><a href="#Player-3"><span class="linenos"> 3</span></a><span class="k">class</span><span class="w"> </span><span class="nc">Player</span><span class="p">:</span>
+</span><span id="Player-4"><a href="#Player-4"><span class="linenos"> 4</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;player class intended for the dice game&quot;&quot;&quot;</span>
+</span><span id="Player-5"><a href="#Player-5"><span class="linenos"> 5</span></a>
+</span><span id="Player-6"><a href="#Player-6"><span class="linenos"> 6</span></a>
+</span><span id="Player-7"><a href="#Player-7"><span class="linenos"> 7</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="Player-8"><a href="#Player-8"><span class="linenos"> 8</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="Player-9"><a href="#Player-9"><span class="linenos"> 9</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name must be a string&quot;</span><span class="p">)</span>
+</span><span id="Player-10"><a href="#Player-10"><span class="linenos">10</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="Player-11"><a href="#Player-11"><span class="linenos">11</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="Player-12"><a href="#Player-12"><span class="linenos">12</span></a>
+</span><span id="Player-13"><a href="#Player-13"><span class="linenos">13</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+</span><span id="Player-14"><a href="#Player-14"><span class="linenos">14</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+</span><span id="Player-15"><a href="#Player-15"><span class="linenos">15</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Score must be an integer&quot;</span><span class="p">)</span>
+</span><span id="Player-16"><a href="#Player-16"><span class="linenos">16</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
+</span><span id="Player-17"><a href="#Player-17"><span class="linenos">17</span></a>
+</span><span id="Player-18"><a href="#Player-18"><span class="linenos">18</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">add_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+</span><span id="Player-19"><a href="#Player-19"><span class="linenos">19</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+</span><span id="Player-20"><a href="#Player-20"><span class="linenos">20</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Score must be an integer&quot;</span><span class="p">)</span>
+</span><span id="Player-21"><a href="#Player-21"><span class="linenos">21</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">score</span>
+</span><span id="Player-22"><a href="#Player-22"><span class="linenos">22</span></a>
+</span><span id="Player-23"><a href="#Player-23"><span class="linenos">23</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_score</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Player-24"><a href="#Player-24"><span class="linenos">24</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span>
+</span><span id="Player-25"><a href="#Player-25"><span class="linenos">25</span></a>
+</span><span id="Player-26"><a href="#Player-26"><span class="linenos">26</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="Player-27"><a href="#Player-27"><span class="linenos">27</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="Player-28"><a href="#Player-28"><span class="linenos">28</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name must be a string&quot;</span><span class="p">)</span>
+</span><span id="Player-29"><a href="#Player-29"><span class="linenos">29</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="Player-30"><a href="#Player-30"><span class="linenos">30</span></a>
+</span><span id="Player-31"><a href="#Player-31"><span class="linenos">31</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Player-32"><a href="#Player-32"><span class="linenos">32</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
 </span></pre></div>
 
 
-    
+            <div class="docstring"><p>player class intended for the dice game</p>
+</div>
 
-                            <div id="player.__init__" class="classattr">
-                                        <input id="player.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+
+                            <div id="Player.__init__" class="classattr">
+                                        <input id="Player.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
-        <span class="name">player</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">name</span></span>)</span>
+        <span class="name">Player</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">name</span></span>)</span>
 
-                <label class="view-source-button" for="player.__init__-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Player.__init__-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#player.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="player.__init__-4"><a href="#player.__init__-4"><span class="linenos">4</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-</span><span id="player.__init__-5"><a href="#player.__init__-5"><span class="linenos">5</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="player.__init__-6"><a href="#player.__init__-6"><span class="linenos">6</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name must be a string&quot;</span><span class="p">)</span>
-</span><span id="player.__init__-7"><a href="#player.__init__-7"><span class="linenos">7</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-</span><span id="player.__init__-8"><a href="#player.__init__-8"><span class="linenos">8</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+    <a class="headerlink" href="#Player.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Player.__init__-7"><a href="#Player.__init__-7"><span class="linenos"> 7</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="Player.__init__-8"><a href="#Player.__init__-8"><span class="linenos"> 8</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="Player.__init__-9"><a href="#Player.__init__-9"><span class="linenos"> 9</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name must be a string&quot;</span><span class="p">)</span>
+</span><span id="Player.__init__-10"><a href="#Player.__init__-10"><span class="linenos">10</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="Player.__init__-11"><a href="#Player.__init__-11"><span class="linenos">11</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
 </span></pre></div>
 
 
     
 
                             </div>
-                            <div id="player.name" class="classattr">
+                            <div id="Player.name" class="classattr">
                                 <div class="attr variable">
             <span class="name">name</span>
 
         
     </div>
-    <a class="headerlink" href="#player.name"></a>
+    <a class="headerlink" href="#Player.name"></a>
     
     
 
                             </div>
-                            <div id="player.score" class="classattr">
+                            <div id="Player.score" class="classattr">
                                 <div class="attr variable">
             <span class="name">score</span>
 
         
     </div>
-    <a class="headerlink" href="#player.score"></a>
+    <a class="headerlink" href="#Player.score"></a>
     
     
 
                             </div>
-                            <div id="player.set_score" class="classattr">
-                                        <input id="player.set_score-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Player.set_score" class="classattr">
+                                        <input id="Player.set_score-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
         <span class="def">def</span>
         <span class="name">set_score</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">score</span></span><span class="return-annotation">):</span></span>
 
-                <label class="view-source-button" for="player.set_score-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Player.set_score-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#player.set_score"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="player.set_score-10"><a href="#player.set_score-10"><span class="linenos">10</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
-</span><span id="player.set_score-11"><a href="#player.set_score-11"><span class="linenos">11</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
-</span><span id="player.set_score-12"><a href="#player.set_score-12"><span class="linenos">12</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Score must be an integer&quot;</span><span class="p">)</span>
-</span><span id="player.set_score-13"><a href="#player.set_score-13"><span class="linenos">13</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
+    <a class="headerlink" href="#Player.set_score"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Player.set_score-13"><a href="#Player.set_score-13"><span class="linenos">13</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+</span><span id="Player.set_score-14"><a href="#Player.set_score-14"><span class="linenos">14</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+</span><span id="Player.set_score-15"><a href="#Player.set_score-15"><span class="linenos">15</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Score must be an integer&quot;</span><span class="p">)</span>
+</span><span id="Player.set_score-16"><a href="#Player.set_score-16"><span class="linenos">16</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="n">score</span>
 </span></pre></div>
 
 
     
 
                             </div>
-                            <div id="player.add_score" class="classattr">
-                                        <input id="player.add_score-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Player.add_score" class="classattr">
+                                        <input id="Player.add_score-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
         <span class="def">def</span>
         <span class="name">add_score</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">score</span></span><span class="return-annotation">):</span></span>
 
-                <label class="view-source-button" for="player.add_score-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Player.add_score-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#player.add_score"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="player.add_score-15"><a href="#player.add_score-15"><span class="linenos">15</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">add_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
-</span><span id="player.add_score-16"><a href="#player.add_score-16"><span class="linenos">16</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
-</span><span id="player.add_score-17"><a href="#player.add_score-17"><span class="linenos">17</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Score must be an integer&quot;</span><span class="p">)</span>
-</span><span id="player.add_score-18"><a href="#player.add_score-18"><span class="linenos">18</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">score</span>
+    <a class="headerlink" href="#Player.add_score"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Player.add_score-18"><a href="#Player.add_score-18"><span class="linenos">18</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">add_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+</span><span id="Player.add_score-19"><a href="#Player.add_score-19"><span class="linenos">19</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+</span><span id="Player.add_score-20"><a href="#Player.add_score-20"><span class="linenos">20</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Score must be an integer&quot;</span><span class="p">)</span>
+</span><span id="Player.add_score-21"><a href="#Player.add_score-21"><span class="linenos">21</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">score</span>
 </span></pre></div>
 
 
     
 
                             </div>
-                            <div id="player.get_score" class="classattr">
-                                        <input id="player.get_score-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Player.get_score" class="classattr">
+                                        <input id="Player.get_score-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
         <span class="def">def</span>
         <span class="name">get_score</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">):</span></span>
 
-                <label class="view-source-button" for="player.get_score-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Player.get_score-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#player.get_score"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="player.get_score-20"><a href="#player.get_score-20"><span class="linenos">20</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_score</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="player.get_score-21"><a href="#player.get_score-21"><span class="linenos">21</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span>
+    <a class="headerlink" href="#Player.get_score"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Player.get_score-23"><a href="#Player.get_score-23"><span class="linenos">23</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_score</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Player.get_score-24"><a href="#Player.get_score-24"><span class="linenos">24</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span>
 </span></pre></div>
 
 
     
 
                             </div>
-                            <div id="player.set_name" class="classattr">
-                                        <input id="player.set_name-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Player.set_name" class="classattr">
+                                        <input id="Player.set_name-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
         <span class="def">def</span>
         <span class="name">set_name</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">name</span></span><span class="return-annotation">):</span></span>
 
-                <label class="view-source-button" for="player.set_name-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Player.set_name-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#player.set_name"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="player.set_name-23"><a href="#player.set_name-23"><span class="linenos">23</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-</span><span id="player.set_name-24"><a href="#player.set_name-24"><span class="linenos">24</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="player.set_name-25"><a href="#player.set_name-25"><span class="linenos">25</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name must be a string&quot;</span><span class="p">)</span>
-</span><span id="player.set_name-26"><a href="#player.set_name-26"><span class="linenos">26</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <a class="headerlink" href="#Player.set_name"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Player.set_name-26"><a href="#Player.set_name-26"><span class="linenos">26</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="Player.set_name-27"><a href="#Player.set_name-27"><span class="linenos">27</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="Player.set_name-28"><a href="#Player.set_name-28"><span class="linenos">28</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name must be a string&quot;</span><span class="p">)</span>
+</span><span id="Player.set_name-29"><a href="#Player.set_name-29"><span class="linenos">29</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 </span></pre></div>
 
 
     
 
                             </div>
-                            <div id="player.get_name" class="classattr">
-                                        <input id="player.get_name-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Player.get_name" class="classattr">
+                                        <input id="Player.get_name-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
         <span class="def">def</span>
         <span class="name">get_name</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">):</span></span>
 
-                <label class="view-source-button" for="player.get_name-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Player.get_name-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#player.get_name"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="player.get_name-28"><a href="#player.get_name-28"><span class="linenos">28</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="player.get_name-29"><a href="#player.get_name-29"><span class="linenos">29</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+    <a class="headerlink" href="#Player.get_name"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Player.get_name-31"><a href="#Player.get_name-31"><span class="linenos">31</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Player.get_name-32"><a href="#Player.get_name-32"><span class="linenos">32</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
 </span></pre></div>
 
 

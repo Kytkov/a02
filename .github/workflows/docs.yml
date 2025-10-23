@@ -1,0 +1,40 @@
+﻿name: Build & Publish Docs
+on:
+  push:
+    branches: [ "main" ]
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - uses: actions/configure-pages@v5
+      # Run pdoc INSIDE the package so flat imports (e.g., `import player`) work.
+      - name: Build API docs with pdoc (flat imports)
+        working-directory: Pigdicegame
+        env:
+          PYTHONPATH: "."
+        run: |
+          mkdir -p ../doc/api
+          pdoc -o ../doc/api Game dice dicehand player Intelligence Highscore Statistics
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: doc/api
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

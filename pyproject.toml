@@ -1,0 +1,4 @@
+﻿[tool.pdoc]
+modules = ['Pigdicegame']
+output_directory = 'doc/api'
+docformat = 'google'

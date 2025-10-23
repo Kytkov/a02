@@ -1,0 +1,22 @@
+cat > .pylintrc << 'EOF'
+[MASTER]
+ignore-patterns=Test.*\.py
+
+[MESSAGES CONTROL]
+disable =
+    C0103,  # naming-style (CamelCase modules/vars)
+    C0114,  # missing-module-docstring
+    C0115,  # missing-class-docstring
+    C0116,  # missing-function-docstring
+    C0414,  # useless-import-alias
+    E0401,  # import-error (tests use flat imports)
+    E1101,  # no-member (caused by import issues)
+    R0801,  # duplicate-code
+    R0903,  # too-few-public-methods
+    R0912,  # too-many-branches
+    R0915,  # too-many-statements
+    W0718   # broad-exception-caught
+
+[FORMAT]
+max-line-length=88
+EOF

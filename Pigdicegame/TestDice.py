@@ -27,5 +27,6 @@ class TestDice(unittest.TestCase):
             result = dice.roll()
             self.assertTrue(1 <= result <= 6)
 
+
 if __name__ == "__main__":
     unittest.main()

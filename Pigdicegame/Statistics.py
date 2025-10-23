@@ -38,10 +38,12 @@ class Statistics:
     def __str__(self):
         """Return a formatted summary of statistics."""
         avg = self.average_score_per_round()
-        return (f"--- Game Statistics ---\n"
-                f"Total Rolls: {self.total_rolls}\n"
-                f"Total Ones: {self.total_ones}\n"
-                f"Total Rounds: {self.total_rounds}\n"
-                f"Total Points: {self.total_points}\n"
-                f"Highest Round Score: {self.highest_round_score}\n"
-                f"Average Score per Round: {avg:.2f}")
+        return (
+            f"--- Game Statistics ---\n"
+            f"Total Rolls: {self.total_rolls}\n"
+            f"Total Ones: {self.total_ones}\n"
+            f"Total Rounds: {self.total_rounds}\n"
+            f"Total Points: {self.total_points}\n"
+            f"Highest Round Score: {self.highest_round_score}\n"
+            f"Average Score per Round: {avg:.2f}"
+        )
