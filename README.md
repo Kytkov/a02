@@ -124,7 +124,7 @@ A `Makefile` is included to simplify development tasks.
 ## Testing
 Run all unit tests:
 ```bash
-python3 -m unittest discover Pigdicegame
+python -m unittest discover (from within the Pigdicegame folder)
 ```
 or use:
 ```bash
