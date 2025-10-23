@@ -61,11 +61,11 @@ Pig is a simple dice game where players take turns rolling a die to accumulate p
 ## Quick Start
 Run the game directly from the command line:
 ```bash
-python3 -m Pigdicegame
+py main.py (dir a02/Pigdicegame)
 ```
 or
 ```bash
-python3 Pigdicegame/main.py
+py Pigdicegame/main.py
 ```
 
 You will be presented with a text-based menu that allows you to:
